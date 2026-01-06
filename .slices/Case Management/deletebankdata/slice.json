@@ -1,0 +1,72 @@
+{
+  "id": "3458764643951994769",
+  "status": "Done",
+  "index": 73,
+  "title": "slice: delete bank data",
+  "context": "Case Management",
+  "sliceType": "UNDEFINED",
+  "commands": [],
+  "events": [
+    {
+      "id": "3458764591402048088",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: delete bank data",
+      "title": "Bank Data Deleted",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "example": "",
+          "mapping": "",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "bankDataId",
+          "type": "UUID",
+          "example": "",
+          "mapping": "",
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "EVENT",
+      "description": "",
+      "aggregate": "Person",
+      "aggregateDependencies": [],
+      "dependencies": [
+        {
+          "id": "3458764591675987311",
+          "type": "OUTBOUND",
+          "title": "Bank Data List",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764591676033180",
+          "type": "INBOUND",
+          "title": "Delete Bank Data",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "readmodels": [],
+  "screens": [],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": []
+}

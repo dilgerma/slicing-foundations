@@ -1,0 +1,116 @@
+{
+  "id": "3458764654182518748",
+  "status": "Created",
+  "index": 137,
+  "title": "slice: Document Overview Item Hidden",
+  "context": "Case Management",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764654182410162",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: Document Overview Item Hidden",
+      "title": "Hide Document Overview Item",
+      "fields": [
+        {
+          "name": "caseId",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "itemId",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "default",
+      "aggregateDependencies": [],
+      "dependencies": [
+        {
+          "id": "3458764654182139354",
+          "type": "INBOUND",
+          "title": "screen",
+          "elementType": "SCREEN"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [],
+  "readmodels": [],
+  "screens": [
+    {
+      "id": "3458764654182139354",
+      "tags": [],
+      "groupId": "3458764654182139359",
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: Document Overview Item Hidden",
+      "title": "screen",
+      "fields": [
+        {
+          "name": "caseId",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "itemId",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "default",
+      "aggregateDependencies": [],
+      "dependencies": [
+        {
+          "id": "3458764654182410162",
+          "type": "OUTBOUND",
+          "title": "Hide Document Overview Item",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764654181615533",
+          "type": "INBOUND",
+          "title": "Case Overview Items",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": true,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": []
+}

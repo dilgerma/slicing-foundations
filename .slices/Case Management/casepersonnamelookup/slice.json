@@ -1,0 +1,19 @@
+{
+  "id": "3458764648059996768",
+  "status": "Done",
+  "index": 97,
+  "title": "slice: case person name lookup",
+  "context": "Case Management",
+  "sliceType": "UNDEFINED",
+  "commands": [],
+  "events": [],
+  "readmodels": [],
+  "screens": [],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": []
+}

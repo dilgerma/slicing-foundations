@@ -1,0 +1,200 @@
+{
+  "id": "3458764643944121692",
+  "status": "Done",
+  "index": 3,
+  "title": "slice: create case",
+  "context": "Case Management",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764591684214141",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: create case",
+      "title": "Create Case",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "generated": true,
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "generated": true,
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "lawFirmId",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "Case",
+      "aggregateDependencies": [
+        "Case"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764591684214366",
+          "type": "OUTBOUND",
+          "title": "Case Created",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764591684142943",
+          "type": "INBOUND",
+          "title": "fall anlegen",
+          "elementType": "SCREEN"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "3458764591684214366",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: create case",
+      "title": "Case Created",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "lawFirmId",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "EVENT",
+      "description": "",
+      "aggregate": "Case",
+      "aggregateDependencies": [
+        "Case"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764654181615533",
+          "type": "OUTBOUND",
+          "title": "Case Overview Items",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764591684535993",
+          "type": "OUTBOUND",
+          "title": "Cases",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764591684214141",
+          "type": "INBOUND",
+          "title": "Create Case",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "readmodels": [],
+  "screens": [
+    {
+      "id": "3458764591684142943",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: create case",
+      "title": "fall anlegen",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "generated": true,
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "generated": true,
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "lawFirmId",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "Case",
+      "aggregateDependencies": [
+        "Case"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764591684214141",
+          "type": "OUTBOUND",
+          "title": "Create Case",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [
+    {
+      "name": "Lawyer"
+    }
+  ],
+  "aggregates": [
+    "Case"
+  ]
+}

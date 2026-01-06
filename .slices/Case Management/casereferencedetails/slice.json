@@ -1,0 +1,103 @@
+{
+  "id": "3458764652489224349",
+  "status": "Done",
+  "index": 19,
+  "title": "slice: Case Reference Details",
+  "context": "Case Management",
+  "sliceType": "STATE_VIEW",
+  "commands": [],
+  "events": [],
+  "readmodels": [
+    {
+      "id": "3458764652489224105",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: Case Reference Details",
+      "title": "Case Reference Details",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        },
+        {
+          "name": "abteilung",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "additional_info",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "aktenzahl",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "gattung",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "jahr",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "pruefzeichen",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "READMODEL",
+      "description": "",
+      "aggregate": "Case",
+      "aggregateDependencies": [
+        "Case"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764652489178134",
+          "type": "INBOUND",
+          "title": "Case Reference Updated",
+          "elementType": "EVENT"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screens": [],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "Case"
+  ]
+}

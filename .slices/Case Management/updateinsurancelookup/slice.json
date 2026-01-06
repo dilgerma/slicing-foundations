@@ -1,0 +1,178 @@
+{
+  "id": "3458764647612163532",
+  "status": "Done",
+  "index": 83,
+  "title": "slice: Update Insurance Lookup",
+  "context": "Case Management",
+  "sliceType": "STATE_VIEW",
+  "commands": [],
+  "events": [],
+  "readmodels": [
+    {
+      "id": "3458764591730026516",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: Update Insurance Lookup",
+      "title": "Update Insurance Lookup",
+      "fields": [
+        {
+          "name": "insuranceId",
+          "type": "String",
+          "mapping": "aggregateId",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "lawFirmId",
+          "type": "String",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "insuranceName",
+          "type": "String",
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "READMODEL",
+      "description": "",
+      "aggregate": "Person",
+      "aggregateDependencies": [
+        "Person"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764591700069728",
+          "type": "OUTBOUND",
+          "title": "update insurance",
+          "elementType": "SCREEN"
+        },
+        {
+          "id": "3458764591708428791",
+          "type": "INBOUND",
+          "title": "Insurance Deleted",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764591708039545",
+          "type": "INBOUND",
+          "title": "Insurance Entity Updated",
+          "elementType": "EVENT"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screens": [
+    {
+      "id": "3458764591700069728",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: Update Insurance Lookup",
+      "title": "update insurance",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "mapping": "insuranceId",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "personInsuranceId",
+          "type": "UUID",
+          "generated": true,
+          "cardinality": "Single",
+          "idAttribute": true
+        },
+        {
+          "name": "insuranceId",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "insuranceName",
+          "type": "String",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "lawFirmId",
+          "type": "UUID",
+          "generated": true,
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "note",
+          "type": "String",
+          "generated": true,
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "policyNumber",
+          "type": "String",
+          "generated": true,
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "mapping": "insuranceName",
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "Person",
+      "aggregateDependencies": [
+        "Person"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764591730120244",
+          "type": "OUTBOUND",
+          "title": "Update Person Insurance",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764591730026516",
+          "type": "INBOUND",
+          "title": "Update Insurance Lookup",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "Person"
+  ]
+}

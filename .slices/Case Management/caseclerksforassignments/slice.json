@@ -1,0 +1,147 @@
+{
+  "id": "3458764653801521541",
+  "status": "Done",
+  "index": 119,
+  "title": "slice: Case Clerks for Assignments",
+  "context": "Case Management",
+  "sliceType": "STATE_VIEW",
+  "commands": [],
+  "events": [],
+  "readmodels": [
+    {
+      "id": "3458764653801450675",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: Case Clerks for Assignments",
+      "title": "Case Clerks for Assignments",
+      "fields": [
+        {
+          "name": "clerkId",
+          "type": "UUID",
+          "mapping": "aggregateId",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "clerkName",
+          "type": "String",
+          "mapping": "name",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "READMODEL",
+      "description": "",
+      "aggregate": "default",
+      "aggregateDependencies": [],
+      "dependencies": [
+        {
+          "id": "3458764653801450673",
+          "type": "OUTBOUND",
+          "title": "screen",
+          "elementType": "SCREEN"
+        },
+        {
+          "id": "3458764654065650494",
+          "type": "INBOUND",
+          "title": "UserAccount updated",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764654065650354",
+          "type": "INBOUND",
+          "title": "User Account activated",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764654065650353",
+          "type": "INBOUND",
+          "title": "UserAccount Deactivated",
+          "elementType": "EVENT"
+        }
+      ],
+      "listElement": true,
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screens": [
+    {
+      "id": "3458764653801450673",
+      "tags": [],
+      "groupId": "3458764653801450681",
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: Case Clerks for Assignments",
+      "title": "screen",
+      "fields": [
+        {
+          "name": "clerkId",
+          "type": "UUID",
+          "mapping": "aggregateId",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "clerkName",
+          "type": "String",
+          "mapping": "name",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "hourlyRate",
+          "type": "Decimal",
+          "generated": true,
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "default",
+      "aggregateDependencies": [],
+      "dependencies": [
+        {
+          "id": "3458764653801450677",
+          "type": "OUTBOUND",
+          "title": "Assign Clerk to Case",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764653801450675",
+          "type": "INBOUND",
+          "title": "Case Clerks for Assignments",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": true,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": []
+}

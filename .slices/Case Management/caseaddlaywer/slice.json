@@ -1,0 +1,215 @@
+{
+  "id": "3458764643953119213",
+  "status": "Blocked",
+  "index": 89,
+  "title": "slice: case add laywer",
+  "context": "Case Management",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764593411150301",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: case add laywer",
+      "title": "Add Case Lawyer",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "note",
+          "type": "String",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "personId",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "lawfirmId",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "Case",
+      "aggregateDependencies": [
+        "Case"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764593411150302",
+          "type": "OUTBOUND",
+          "title": "Case Lawyer Added",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764593411150288",
+          "type": "INBOUND",
+          "title": "screen",
+          "elementType": "SCREEN"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "3458764593411150302",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: case add laywer",
+      "title": "Case Lawyer Added",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "note",
+          "type": "String",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "personId",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "lawfirmId",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "EVENT",
+      "description": "",
+      "aggregate": "Case",
+      "aggregateDependencies": [
+        "Case"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764654181615533",
+          "type": "OUTBOUND",
+          "title": "Case Overview Items",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764593411150303",
+          "type": "OUTBOUND",
+          "title": "Case Lawyer List",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764593411150301",
+          "type": "INBOUND",
+          "title": "Add Case Lawyer",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "readmodels": [],
+  "screens": [
+    {
+      "id": "3458764593411150288",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: case add laywer",
+      "title": "screen",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "note",
+          "type": "String",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "personId",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "lawfirmId",
+          "type": "UUID",
+          "generated": true,
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "Case",
+      "aggregateDependencies": [
+        "Case"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764593411150301",
+          "type": "OUTBOUND",
+          "title": "Add Case Lawyer",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [
+    {
+      "name": "Lawyer"
+    }
+  ],
+  "aggregates": [
+    "Case"
+  ]
+}

@@ -1,0 +1,534 @@
+{
+  "id": "3458764653560072474",
+  "status": "InProgress",
+  "index": 25,
+  "title": "slice: Create Person with Address",
+  "context": "Case Management",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764653559912521",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: Create Person with Address",
+      "title": "Create Person",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "academicTitle",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "birthdate",
+          "type": "Date",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "salutation",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "socialSecurityNumber",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "surname",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "lawFirmId",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "street",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "houseNumber",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "zipCode",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "city",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "country",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "Person",
+      "aggregateDependencies": [
+        "Person"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764591676280878",
+          "type": "OUTBOUND",
+          "title": "Person Updated",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764591402494421",
+          "type": "INBOUND",
+          "title": "create person",
+          "elementType": "SCREEN"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "3458764591676408483",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: Create Person with Address",
+      "title": "Person Deleted",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "example": "",
+          "mapping": "",
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "EVENT",
+      "description": "",
+      "aggregate": "Person",
+      "aggregateDependencies": [
+        "Person"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764591676408187",
+          "type": "OUTBOUND",
+          "title": "Persons",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764647798752359",
+          "type": "OUTBOUND",
+          "title": "Case Person Selections",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764591676408322",
+          "type": "INBOUND",
+          "title": "Delete Person",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    },
+    {
+      "id": "3458764591676280878",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: Create Person with Address",
+      "title": "Person Updated",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "salutation",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "surname",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "academicTitle",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "birthdate",
+          "type": "Date",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "socialSecurityNumber",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "example": "Privatperson | Firma",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "lawFirmId",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "EVENT",
+      "description": "",
+      "aggregate": "Person",
+      "aggregateDependencies": [
+        "Person"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764591676408187",
+          "type": "OUTBOUND",
+          "title": "Persons",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764591676280835",
+          "type": "INBOUND",
+          "title": "Update Person",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764653559912521",
+          "type": "INBOUND",
+          "title": "Create Person",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "readmodels": [],
+  "screens": [
+    {
+      "id": "3458764591684142943",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: Create Person with Address",
+      "title": "fall anlegen",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "generated": true,
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "generated": true,
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "lawFirmId",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "Person",
+      "aggregateDependencies": [
+        "Person"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764591684214141",
+          "type": "OUTBOUND",
+          "title": "Create Case",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    },
+    {
+      "id": "3458764591402494421",
+      "tags": [],
+      "domain": "",
+      "elementContext": "INTERNAL",
+      "modelContext": "Case Management",
+      "context": "INTERNAL",
+      "slice": "slice: Create Person with Address",
+      "title": "create person",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "academicDegree",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "academicTitle",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "birthdate",
+          "type": "Date",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "caseId",
+          "type": "UUID",
+          "mapping": "aggregateId",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "jobTitle",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "salutation",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "socialSecurityNumber",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "surname",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "city",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "country",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "houseNumber",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "lawFirmId",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "street",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "zipCode",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "Person",
+      "aggregateDependencies": [
+        "Person"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764653559912521",
+          "type": "OUTBOUND",
+          "title": "Create Person",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764591676408187",
+          "type": "INBOUND",
+          "title": "Persons",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [
+    {
+      "name": "Lawyer"
+    }
+  ],
+  "aggregates": [
+    "Person"
+  ]
+}
