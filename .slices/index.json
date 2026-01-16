@@ -1,0 +1,249 @@
+{
+  "slices": [
+    {
+      "id": "3458764655724615131",
+      "slice": "slice: Create Catalog Entry",
+      "index": 1,
+      "context": "Catalog Management",
+      "folder": "createcatalogentry"
+    },
+    {
+      "id": "3458764655724615140",
+      "slice": "slice: Catalog Entries",
+      "index": 3,
+      "context": "Catalog Management",
+      "folder": "catalogentries"
+    },
+    {
+      "id": "3458764655724615144",
+      "slice": "slice: Catalog Entry Details",
+      "index": 5,
+      "context": "Catalog Management",
+      "folder": "catalogentrydetails"
+    },
+    {
+      "id": "3458764655724615166",
+      "slice": "slice: Update Catalog Entry",
+      "index": 7,
+      "context": "Catalog Management",
+      "folder": "updatecatalogentry"
+    },
+    {
+      "id": "3458764655724615192",
+      "slice": "slice: Archive Catalog Entry",
+      "index": 9,
+      "context": "Catalog Management",
+      "folder": "archivecatalogentry"
+    },
+    {
+      "id": "3458764655732738695",
+      "slice": "slice: Publish Item",
+      "index": 11,
+      "context": "Catalog Management",
+      "folder": "publishitem"
+    },
+    {
+      "id": "3458764655738563268",
+      "slice": "slice: Item Details for publication",
+      "index": 13,
+      "context": "Catalog Management",
+      "folder": "itemdetailsforpublication"
+    },
+    {
+      "id": "3458764655738563312",
+      "slice": "slice: Items to publish",
+      "index": 15,
+      "context": "Catalog Management",
+      "folder": "itemstopublish"
+    },
+    {
+      "id": "3458764655738563358",
+      "slice": "slice: Export Item",
+      "index": 17,
+      "context": "Catalog Management",
+      "folder": "exportitem"
+    },
+    {
+      "id": "3458764655738738195",
+      "slice": "slice: Export Item Archived",
+      "index": 19,
+      "context": "Catalog Management",
+      "folder": "exportitemarchived"
+    },
+    {
+      "id": "3458764655743743266",
+      "slice": "slice: Books for rent",
+      "index": 1,
+      "context": "Borrowing",
+      "folder": "booksforrent"
+    },
+    {
+      "id": "3458764655743743339",
+      "slice": "slice: Reserve Book",
+      "index": 3,
+      "context": "Borrowing",
+      "folder": "reservebook"
+    },
+    {
+      "id": "3458764655743743361",
+      "slice": "slice: Reservations",
+      "index": 5,
+      "context": "Borrowing",
+      "folder": "reservations"
+    },
+    {
+      "id": "3458764655743743394",
+      "slice": "slice: Import User",
+      "index": 7,
+      "context": "Borrowing",
+      "folder": "importuser"
+    },
+    {
+      "id": "3458764655743743407",
+      "slice": "slice: User Email Lookup for Reservation Notification",
+      "index": 9,
+      "context": "Borrowing",
+      "folder": "useremaillookupforreservationnotification"
+    },
+    {
+      "id": "3458764655743743419",
+      "slice": "slice: Reservation notification to send",
+      "index": 11,
+      "context": "Borrowing",
+      "folder": "reservationnotificationtosend"
+    },
+    {
+      "id": "3458764655743743434",
+      "slice": "slice: Send Reservation notification",
+      "index": 13,
+      "context": "Borrowing",
+      "folder": "sendreservationnotification"
+    },
+    {
+      "id": "3458764655743743483",
+      "slice": "slice: reservations for expiration",
+      "index": 15,
+      "context": "Borrowing",
+      "folder": "reservationsforexpiration"
+    },
+    {
+      "id": "3458764655743743494",
+      "slice": "slice: Expire Reservation",
+      "index": 17,
+      "context": "Borrowing",
+      "folder": "expirereservation"
+    },
+    {
+      "id": "3458764655743743521",
+      "slice": "slice: Book Detail lookup for active reservations",
+      "index": 19,
+      "context": "Borrowing",
+      "folder": "bookdetaillookupforactivereservations"
+    },
+    {
+      "id": "3458764655743743553",
+      "slice": "slice: Active reservations",
+      "index": 21,
+      "context": "Borrowing",
+      "folder": "activereservations"
+    },
+    {
+      "id": "3458764655743743594",
+      "slice": "slice: Mark reservation as picked up",
+      "index": 23,
+      "context": "Borrowing",
+      "folder": "markreservationaspickedup"
+    },
+    {
+      "id": "3458764655743743621",
+      "slice": "slice: Book Detail lookup for borrowing details",
+      "index": 25,
+      "context": "Borrowing",
+      "folder": "bookdetaillookupforborrowingdetails"
+    },
+    {
+      "id": "3458764655743743659",
+      "slice": "slice: Reservation Lookup for Borrowing Details",
+      "index": 27,
+      "context": "Borrowing",
+      "folder": "reservationlookupforborrowingdetails"
+    },
+    {
+      "id": "3458764655743743724",
+      "slice": "slice: Customer Borrowings",
+      "index": 29,
+      "context": "Borrowing",
+      "folder": "customerborrowings"
+    },
+    {
+      "id": "3458764655743743822",
+      "slice": "slice: Mark lost",
+      "index": 31,
+      "context": "Borrowing",
+      "folder": "marklost"
+    },
+    {
+      "id": "3458764655743743840",
+      "slice": "slice: Mark damaged",
+      "index": 33,
+      "context": "Borrowing",
+      "folder": "markdamaged"
+    },
+    {
+      "id": "3458764655397505966",
+      "slice": "slice: Create Account",
+      "index": 1,
+      "context": "Registration",
+      "folder": "createaccount"
+    },
+    {
+      "id": "3458764655397506130",
+      "slice": "slice: Confirmation Mails to send",
+      "index": 3,
+      "context": "Registration",
+      "folder": "confirmationmailstosend"
+    },
+    {
+      "id": "3458764655397506156",
+      "slice": "slice: Notify customer",
+      "index": 5,
+      "context": "Registration",
+      "folder": "notifycustomer"
+    },
+    {
+      "id": "3458764655602821733",
+      "slice": "slice: Emails to confirm TODO",
+      "index": 7,
+      "context": "Registration",
+      "folder": "emailstoconfirmtodo"
+    },
+    {
+      "id": "3458764655397506269",
+      "slice": "slice: Confirm Account",
+      "index": 9,
+      "context": "Registration",
+      "folder": "confirmaccount"
+    },
+    {
+      "id": "3458764655397506289",
+      "slice": "slice: Confirmed Accounts",
+      "index": 11,
+      "context": "Registration",
+      "folder": "confirmedaccounts"
+    },
+    {
+      "id": "3458764655397506317",
+      "slice": "slice: Update Account",
+      "index": 13,
+      "context": "Registration",
+      "folder": "updateaccount"
+    },
+    {
+      "id": "3458764655397506439",
+      "slice": "slice: deactivate Account",
+      "index": 15,
+      "context": "Registration",
+      "folder": "deactivateaccount"
+    }
+  ]
+}

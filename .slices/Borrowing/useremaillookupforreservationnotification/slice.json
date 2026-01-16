@@ -1,0 +1,69 @@
+{
+  "id": "3458764655743743407",
+  "status": "Created",
+  "title": "slice: User Email Lookup for Reservation Notification",
+  "context": "Borrowing",
+  "sliceType": "STATE_VIEW",
+  "commands": [],
+  "events": [],
+  "readmodels": [
+    {
+      "id": "3458764655729711660",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Borrowing",
+      "context": "INTERNAL",
+      "slice": "slice: User Email Lookup for Reservation Notification",
+      "title": "User Email Lookup for Reservation Notification",
+      "fields": [
+        {
+          "name": "user id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "READMODEL",
+      "description": "",
+      "aggregate": "default",
+      "aggregateDependencies": [],
+      "dependencies": [
+        {
+          "id": "3458764655729711639",
+          "type": "OUTBOUND",
+          "title": "automation",
+          "elementType": "AUTOMATION"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screens": [],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": []
+}

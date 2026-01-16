@@ -1,0 +1,198 @@
+{
+  "id": "3458764655397506317",
+  "status": "Created",
+  "title": "slice: Update Account",
+  "context": "Registration",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764655392353799",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Registration",
+      "context": "INTERNAL",
+      "slice": "slice: Update Account",
+      "title": "Update Account",
+      "fields": [
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "user_id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "Registration",
+      "aggregateDependencies": [
+        "Registration"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655392353848",
+          "type": "OUTBOUND",
+          "title": "Account updated",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764655392353245",
+          "type": "INBOUND",
+          "title": "screen",
+          "elementType": "SCREEN"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "3458764655392353848",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Registration",
+      "context": "INTERNAL",
+      "slice": "slice: Update Account",
+      "title": "Account updated",
+      "fields": [
+        {
+          "name": "user_id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "EVENT",
+      "description": "",
+      "aggregate": "Registration",
+      "aggregateDependencies": [
+        "Registration"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655392353436",
+          "type": "OUTBOUND",
+          "title": "Confirmed Accounts",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655392353799",
+          "type": "INBOUND",
+          "title": "Update Account",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "readmodels": [],
+  "screens": [
+    {
+      "id": "3458764655392353245",
+      "tags": [],
+      "groupId": "3458764655392353249",
+      "elementContext": "INTERNAL",
+      "modelContext": "Registration",
+      "context": "INTERNAL",
+      "slice": "slice: Update Account",
+      "title": "screen",
+      "fields": [
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "user_id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "Registration",
+      "aggregateDependencies": [
+        "Registration"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655392353799",
+          "type": "OUTBOUND",
+          "title": "Update Account",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764655392353436",
+          "type": "INBOUND",
+          "title": "Confirmed Accounts",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": true,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "Registration"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "3458764655738563312",
+  "status": "Created",
+  "title": "slice: Items to publish",
+  "context": "Catalog Management",
+  "sliceType": "STATE_VIEW",
+  "commands": [],
+  "events": [],
+  "readmodels": [
+    {
+      "id": "3458764655736566009",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Catalog Management",
+      "context": "INTERNAL",
+      "slice": "slice: Items to publish",
+      "title": "Items to publish",
+      "fields": [
+        {
+          "name": "item id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        },
+        {
+          "name": "archived",
+          "type": "Boolean",
+          "mapping": "Catalogue entry archived",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "READMODEL",
+      "description": "",
+      "aggregate": "Catalogue Management",
+      "aggregateDependencies": [
+        "Catalogue Management"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655738191620",
+          "type": "OUTBOUND",
+          "title": "Item Publishing",
+          "elementType": "AUTOMATION"
+        },
+        {
+          "id": "3458764655738738246",
+          "type": "OUTBOUND",
+          "title": "Item Publishing",
+          "elementType": "AUTOMATION"
+        },
+        {
+          "id": "3458764655552383981",
+          "type": "INBOUND",
+          "title": "Catalogue entry archived",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764655732594722",
+          "type": "INBOUND",
+          "title": "Item published",
+          "elementType": "EVENT"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screens": [],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "Catalogue Management"
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "id": "3458764655397506156",
+  "status": "Created",
+  "title": "slice: Notify customer",
+  "context": "Registration",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764655391010383",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Registration",
+      "context": "INTERNAL",
+      "slice": "slice: Notify customer",
+      "title": "Notify customer",
+      "fields": [
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "user_id",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "token",
+          "type": "String",
+          "generated": true,
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "Registration",
+      "aggregateDependencies": [
+        "Registration"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655391355641",
+          "type": "OUTBOUND",
+          "title": "Customer notified",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764655391010164",
+          "type": "INBOUND",
+          "title": "automation",
+          "elementType": "AUTOMATION"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "3458764655391355641",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Registration",
+      "context": "INTERNAL",
+      "slice": "slice: Notify customer",
+      "title": "Customer notified",
+      "fields": [
+        {
+          "name": "user_id",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "token",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "EVENT",
+      "description": "",
+      "aggregate": "Registration",
+      "aggregateDependencies": [
+        "Registration"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655601747828",
+          "type": "OUTBOUND",
+          "title": "Emails to confirm TODO",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655392353436",
+          "type": "OUTBOUND",
+          "title": "Confirmed Accounts",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655391010052",
+          "type": "OUTBOUND",
+          "title": "Confirmation Mails to send TODO",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655391010383",
+          "type": "INBOUND",
+          "title": "Notify customer",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "readmodels": [],
+  "screens": [],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [
+    {
+      "id": "3458764655391010164",
+      "tags": [],
+      "groupId": "3458764655391010168",
+      "elementContext": "INTERNAL",
+      "modelContext": "Registration",
+      "context": "INTERNAL",
+      "slice": "slice: Notify customer",
+      "title": "automation",
+      "fields": [
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "user_id",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "AUTOMATION",
+      "description": "",
+      "aggregate": "Registration",
+      "aggregateDependencies": [
+        "Registration"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655391010383",
+          "type": "OUTBOUND",
+          "title": "Notify customer",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764655391010052",
+          "type": "INBOUND",
+          "title": "Confirmation Mails to send TODO",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "Registration"
+  ]
+}

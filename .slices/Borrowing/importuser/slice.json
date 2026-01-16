@@ -1,0 +1,121 @@
+{
+  "id": "3458764655743743394",
+  "status": "Created",
+  "title": "slice: Import User",
+  "context": "Borrowing",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764655729711665",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Borrowing",
+      "context": "INTERNAL",
+      "slice": "slice: Import User",
+      "title": "Import User",
+      "fields": [
+        {
+          "name": "user id",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "default",
+      "aggregateDependencies": [],
+      "dependencies": [
+        {
+          "id": "3458764655729711663",
+          "type": "INBOUND",
+          "title": "automation",
+          "elementType": "AUTOMATION"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [],
+  "readmodels": [],
+  "screens": [],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [
+    {
+      "id": "3458764655729711663",
+      "tags": [],
+      "groupId": "3458764655729711709",
+      "elementContext": "INTERNAL",
+      "modelContext": "Borrowing",
+      "context": "INTERNAL",
+      "slice": "slice: Import User",
+      "title": "automation",
+      "fields": [
+        {
+          "name": "user id",
+          "type": "UUID",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "AUTOMATION",
+      "description": "",
+      "aggregate": "default",
+      "aggregateDependencies": [],
+      "dependencies": [
+        {
+          "id": "3458764655729711665",
+          "type": "OUTBOUND",
+          "title": "Import User",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": []
+}

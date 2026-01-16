@@ -1,0 +1,163 @@
+{
+  "id": "3458764655397506439",
+  "status": "Created",
+  "title": "slice: deactivate Account",
+  "context": "Registration",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764655393190353",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Registration",
+      "context": "INTERNAL",
+      "slice": "slice: deactivate Account",
+      "title": "deactivate Account",
+      "fields": [
+        {
+          "name": "user_id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "Registration",
+      "aggregateDependencies": [
+        "Registration"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655390014788",
+          "type": "OUTBOUND",
+          "title": "Account deactivated",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764655393190101",
+          "type": "INBOUND",
+          "title": "screen",
+          "elementType": "SCREEN"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "3458764655390014788",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Registration",
+      "context": "INTERNAL",
+      "slice": "slice: deactivate Account",
+      "title": "Account deactivated",
+      "fields": [
+        {
+          "name": "user_id",
+          "type": "UUID",
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "EVENT",
+      "description": "",
+      "aggregate": "Registration",
+      "aggregateDependencies": [
+        "Registration"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655393190353",
+          "type": "INBOUND",
+          "title": "deactivate Account",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "readmodels": [],
+  "screens": [
+    {
+      "id": "3458764655393190101",
+      "tags": [],
+      "groupId": "3458764655393190109",
+      "elementContext": "INTERNAL",
+      "modelContext": "Registration",
+      "context": "INTERNAL",
+      "slice": "slice: deactivate Account",
+      "title": "screen",
+      "fields": [
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "user_id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "Registration",
+      "aggregateDependencies": [
+        "Registration"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655393190353",
+          "type": "OUTBOUND",
+          "title": "deactivate Account",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764655392353436",
+          "type": "INBOUND",
+          "title": "Confirmed Accounts",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": true,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "Registration"
+  ]
+}

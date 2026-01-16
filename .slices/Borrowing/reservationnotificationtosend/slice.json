@@ -1,0 +1,79 @@
+{
+  "id": "3458764655743743419",
+  "status": "Created",
+  "title": "slice: Reservation notification to send",
+  "context": "Borrowing",
+  "sliceType": "STATE_VIEW",
+  "commands": [],
+  "events": [],
+  "readmodels": [
+    {
+      "id": "3458764655729711638",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Borrowing",
+      "context": "INTERNAL",
+      "slice": "slice: Reservation notification to send",
+      "title": "Reservation notification to send",
+      "fields": [
+        {
+          "name": "book id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "user id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "reservation id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        }
+      ],
+      "type": "READMODEL",
+      "description": "",
+      "aggregate": "Reservation",
+      "aggregateDependencies": [
+        "Reservation"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655729711639",
+          "type": "OUTBOUND",
+          "title": "automation",
+          "elementType": "AUTOMATION"
+        },
+        {
+          "id": "3458764655729711627",
+          "type": "INBOUND",
+          "title": "Book reserved",
+          "elementType": "EVENT"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screens": [],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "Reservation"
+  ]
+}

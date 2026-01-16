@@ -1,0 +1,87 @@
+{
+  "id": "3458764655743743483",
+  "status": "Created",
+  "title": "slice: reservations for expiration",
+  "context": "Borrowing",
+  "sliceType": "STATE_VIEW",
+  "commands": [],
+  "events": [],
+  "readmodels": [
+    {
+      "id": "3458764655729711645",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Borrowing",
+      "context": "INTERNAL",
+      "slice": "slice: reservations for expiration",
+      "title": "reservations for expiration",
+      "fields": [
+        {
+          "name": "book id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "reservation id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        },
+        {
+          "name": "user id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "borrow date",
+          "type": "DateTime",
+          "generated": true,
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "READMODEL",
+      "description": "",
+      "aggregate": "Reservation",
+      "aggregateDependencies": [
+        "Reservation"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655729711642",
+          "type": "OUTBOUND",
+          "title": "processor",
+          "elementType": "AUTOMATION"
+        },
+        {
+          "id": "3458764655729711627",
+          "type": "INBOUND",
+          "title": "Book reserved",
+          "elementType": "EVENT"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screens": [],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "Reservation"
+  ]
+}

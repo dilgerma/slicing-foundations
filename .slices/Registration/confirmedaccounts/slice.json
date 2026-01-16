@@ -1,0 +1,152 @@
+{
+  "id": "3458764655397506289",
+  "status": "Created",
+  "title": "slice: Confirmed Accounts",
+  "context": "Registration",
+  "sliceType": "STATE_VIEW",
+  "commands": [],
+  "events": [],
+  "readmodels": [
+    {
+      "id": "3458764655392353436",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Registration",
+      "context": "INTERNAL",
+      "slice": "slice: Confirmed Accounts",
+      "title": "Confirmed Accounts",
+      "fields": [
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "user_id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "READMODEL",
+      "description": "",
+      "aggregate": "Registration",
+      "aggregateDependencies": [
+        "Registration"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655392353245",
+          "type": "OUTBOUND",
+          "title": "screen",
+          "elementType": "SCREEN"
+        },
+        {
+          "id": "3458764655390014478",
+          "type": "INBOUND",
+          "title": "Account created",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764655392004611",
+          "type": "INBOUND",
+          "title": "Account confirmed",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764655391355641",
+          "type": "INBOUND",
+          "title": "Customer notified",
+          "elementType": "EVENT"
+        }
+      ],
+      "listElement": true,
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screens": [
+    {
+      "id": "3458764655392353245",
+      "tags": [],
+      "groupId": "3458764655392353249",
+      "elementContext": "INTERNAL",
+      "modelContext": "Registration",
+      "context": "INTERNAL",
+      "slice": "slice: Confirmed Accounts",
+      "title": "screen",
+      "fields": [
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "user_id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "Registration",
+      "aggregateDependencies": [
+        "Registration"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655392353799",
+          "type": "OUTBOUND",
+          "title": "Update Account",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764655392353436",
+          "type": "INBOUND",
+          "title": "Confirmed Accounts",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": true,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "Registration"
+  ]
+}

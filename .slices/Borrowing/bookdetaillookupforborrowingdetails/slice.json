@@ -1,0 +1,148 @@
+{
+  "id": "3458764655743743621",
+  "status": "Created",
+  "title": "slice: Book Detail lookup for borrowing details",
+  "context": "Borrowing",
+  "sliceType": "STATE_VIEW",
+  "commands": [],
+  "events": [],
+  "readmodels": [
+    {
+      "id": "3458764655742569625",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Borrowing",
+      "context": "INTERNAL",
+      "slice": "slice: Book Detail lookup for borrowing details",
+      "title": "Book Detail lookup for borrowing details",
+      "fields": [
+        {
+          "name": "book id",
+          "type": "String",
+          "mapping": "item id",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "READMODEL",
+      "description": "",
+      "aggregate": "default",
+      "aggregateDependencies": [],
+      "dependencies": [
+        {
+          "id": "3458764655729711651",
+          "type": "OUTBOUND",
+          "title": "screen",
+          "elementType": "SCREEN"
+        }
+      ],
+      "listElement": true,
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screens": [
+    {
+      "id": "3458764655729711651",
+      "tags": [],
+      "groupId": "3458764655729711707",
+      "elementContext": "INTERNAL",
+      "modelContext": "Borrowing",
+      "context": "INTERNAL",
+      "slice": "slice: Book Detail lookup for borrowing details",
+      "title": "screen",
+      "fields": [
+        {
+          "name": "reservation id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "user id",
+          "type": "String",
+          "generated": true,
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "book id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "default",
+      "aggregateDependencies": [],
+      "dependencies": [
+        {
+          "id": "3458764655729711653",
+          "type": "OUTBOUND",
+          "title": "Mark lost",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764655729711656",
+          "type": "OUTBOUND",
+          "title": "Mark damaged",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764655742569625",
+          "type": "INBOUND",
+          "title": "Book Detail lookup for borrowing details",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655742424589",
+          "type": "INBOUND",
+          "title": "Reservation Lookup for Borrowing Details",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655729711650",
+          "type": "INBOUND",
+          "title": "Customer Borrowings",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": true,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": []
+}

@@ -1,0 +1,98 @@
+{
+  "id": "3458764655738563268",
+  "status": "Created",
+  "title": "slice: Item Details for publication",
+  "context": "Catalog Management",
+  "sliceType": "STATE_VIEW",
+  "commands": [],
+  "events": [],
+  "readmodels": [
+    {
+      "id": "3458764655738119679",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Catalog Management",
+      "context": "INTERNAL",
+      "slice": "slice: Item Details for publication",
+      "title": "Item Details for publication",
+      "fields": [
+        {
+          "name": "author",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "item id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "READMODEL",
+      "description": "",
+      "aggregate": "Catalogue Management",
+      "aggregateDependencies": [
+        "Catalogue Management"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655738191620",
+          "type": "OUTBOUND",
+          "title": "Item Publishing",
+          "elementType": "AUTOMATION"
+        },
+        {
+          "id": "3458764655552383979",
+          "type": "INBOUND",
+          "title": "Catalogue entry created",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764655732594722",
+          "type": "INBOUND",
+          "title": "Item published",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764655552383980",
+          "type": "INBOUND",
+          "title": "Catalogue entry updated",
+          "elementType": "EVENT"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screens": [],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "Catalogue Management"
+  ]
+}

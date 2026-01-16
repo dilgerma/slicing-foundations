@@ -1,0 +1,216 @@
+{
+  "id": "3458764655743743339",
+  "status": "Created",
+  "title": "slice: Reserve Book",
+  "context": "Borrowing",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764655729711634",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Borrowing",
+      "context": "INTERNAL",
+      "slice": "slice: Reserve Book",
+      "title": "Reserve Book",
+      "fields": [
+        {
+          "name": "book id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "user id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "reservation id",
+          "type": "String",
+          "generated": true,
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "Reservation",
+      "aggregateDependencies": [
+        "Reservation"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655729711627",
+          "type": "OUTBOUND",
+          "title": "Book reserved",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764655729711632",
+          "type": "INBOUND",
+          "title": "screen",
+          "elementType": "SCREEN"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "3458764655729711627",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Borrowing",
+      "context": "INTERNAL",
+      "slice": "slice: Reserve Book",
+      "title": "Book reserved",
+      "fields": [
+        {
+          "name": "user id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "book id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "reservation id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        }
+      ],
+      "type": "EVENT",
+      "description": "",
+      "aggregate": "Reservation",
+      "aggregateDependencies": [
+        "Reservation"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655742424589",
+          "type": "OUTBOUND",
+          "title": "Reservation Lookup for Borrowing Details",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655730201944",
+          "type": "OUTBOUND",
+          "title": "Active reservations",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655729711645",
+          "type": "OUTBOUND",
+          "title": "reservations for expiration",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655729711638",
+          "type": "OUTBOUND",
+          "title": "Reservation notification to send",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655729711635",
+          "type": "OUTBOUND",
+          "title": "Reservations",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655729711634",
+          "type": "INBOUND",
+          "title": "Reserve Book",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "readmodels": [],
+  "screens": [
+    {
+      "id": "3458764655729711632",
+      "tags": [],
+      "groupId": "3458764655729711702",
+      "elementContext": "INTERNAL",
+      "modelContext": "Borrowing",
+      "context": "INTERNAL",
+      "slice": "slice: Reserve Book",
+      "title": "screen",
+      "fields": [
+        {
+          "name": "user id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "book id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "Reservation",
+      "aggregateDependencies": [
+        "Reservation"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655729711634",
+          "type": "OUTBOUND",
+          "title": "Reserve Book",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764655729711659",
+          "type": "INBOUND",
+          "title": "Books for rent",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": true,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "Reservation"
+  ]
+}

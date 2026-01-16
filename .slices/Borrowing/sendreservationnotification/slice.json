@@ -1,0 +1,226 @@
+{
+  "id": "3458764655743743434",
+  "status": "Created",
+  "title": "slice: Send Reservation notification",
+  "context": "Borrowing",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764655729711641",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Borrowing",
+      "context": "INTERNAL",
+      "slice": "slice: Send Reservation notification",
+      "title": "Send Reservation notification",
+      "fields": [
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "user id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "reservation id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "Reservation",
+      "aggregateDependencies": [
+        "Reservation"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655729711628",
+          "type": "OUTBOUND",
+          "title": "Reservation notification sent",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764655729711639",
+          "type": "INBOUND",
+          "title": "automation",
+          "elementType": "AUTOMATION"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "3458764655729711628",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Borrowing",
+      "context": "INTERNAL",
+      "slice": "slice: Send Reservation notification",
+      "title": "Reservation notification sent",
+      "fields": [
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "user id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "reservation id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        }
+      ],
+      "type": "EVENT",
+      "description": "",
+      "aggregate": "Reservation",
+      "aggregateDependencies": [
+        "Reservation"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655729711641",
+          "type": "INBOUND",
+          "title": "Send Reservation notification",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "readmodels": [],
+  "screens": [],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [
+    {
+      "id": "3458764655729711639",
+      "tags": [],
+      "groupId": "3458764655729711704",
+      "elementContext": "INTERNAL",
+      "modelContext": "Borrowing",
+      "context": "INTERNAL",
+      "slice": "slice: Send Reservation notification",
+      "title": "automation",
+      "fields": [
+        {
+          "name": "email",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "user id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "book id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "reservation id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        }
+      ],
+      "type": "AUTOMATION",
+      "description": "",
+      "aggregate": "Reservation",
+      "aggregateDependencies": [
+        "Reservation"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655729711641",
+          "type": "OUTBOUND",
+          "title": "Send Reservation notification",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764655729711660",
+          "type": "INBOUND",
+          "title": "User Email Lookup for Reservation Notification",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655729711638",
+          "type": "INBOUND",
+          "title": "Reservation notification to send",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "Reservation"
+  ]
+}

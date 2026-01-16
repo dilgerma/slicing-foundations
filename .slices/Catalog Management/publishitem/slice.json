@@ -1,0 +1,156 @@
+{
+  "id": "3458764655732738695",
+  "status": "Created",
+  "title": "slice: Publish Item",
+  "context": "Catalog Management",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764655732594496",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Catalog Management",
+      "context": "INTERNAL",
+      "slice": "slice: Publish Item",
+      "title": "Publish Item",
+      "fields": [
+        {
+          "name": "item id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "Catalogue Management",
+      "aggregateDependencies": [
+        "Catalogue Management"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655732594722",
+          "type": "OUTBOUND",
+          "title": "Item published",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764655732168671",
+          "type": "INBOUND",
+          "title": "screen",
+          "elementType": "SCREEN"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "3458764655732594722",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Catalog Management",
+      "context": "INTERNAL",
+      "slice": "slice: Publish Item",
+      "title": "Item published",
+      "fields": [
+        {
+          "name": "item id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        }
+      ],
+      "type": "EVENT",
+      "description": "",
+      "aggregate": "Catalogue Management",
+      "aggregateDependencies": [
+        "Catalogue Management"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655738119679",
+          "type": "OUTBOUND",
+          "title": "Item Details for publication",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655736566009",
+          "type": "OUTBOUND",
+          "title": "Items to publish",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655732594496",
+          "type": "INBOUND",
+          "title": "Publish Item",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "readmodels": [],
+  "screens": [
+    {
+      "id": "3458764655732168671",
+      "tags": [],
+      "groupId": "3458764655732168677",
+      "elementContext": "INTERNAL",
+      "modelContext": "Catalog Management",
+      "context": "INTERNAL",
+      "slice": "slice: Publish Item",
+      "title": "screen",
+      "fields": [
+        {
+          "name": "item id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "Catalogue Management",
+      "aggregateDependencies": [
+        "Catalogue Management"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655732594496",
+          "type": "OUTBOUND",
+          "title": "Publish Item",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": true,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "Catalogue Management"
+  ]
+}

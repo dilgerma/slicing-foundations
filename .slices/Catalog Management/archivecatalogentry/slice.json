@@ -1,0 +1,177 @@
+{
+  "id": "3458764655724615192",
+  "status": "Created",
+  "title": "slice: Archive Catalog Entry",
+  "context": "Catalog Management",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764655717997216",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Catalog Management",
+      "context": "INTERNAL",
+      "slice": "slice: Archive Catalog Entry",
+      "title": "Archive Catalog Entry",
+      "fields": [
+        {
+          "name": "item id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "Catalogue Management",
+      "aggregateDependencies": [
+        "Catalogue Management"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655552383981",
+          "type": "OUTBOUND",
+          "title": "Catalogue entry archived",
+          "elementType": "EVENT"
+        },
+        {
+          "id": "3458764655718555913",
+          "type": "INBOUND",
+          "title": "screen",
+          "elementType": "SCREEN"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "3458764655552383981",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Catalog Management",
+      "context": "INTERNAL",
+      "slice": "slice: Archive Catalog Entry",
+      "title": "Catalogue entry archived",
+      "fields": [
+        {
+          "name": "item id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        }
+      ],
+      "type": "EVENT",
+      "description": "",
+      "aggregate": "Catalogue Management",
+      "aggregateDependencies": [
+        "Catalogue Management"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655736566009",
+          "type": "OUTBOUND",
+          "title": "Items to publish",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655717997216",
+          "type": "INBOUND",
+          "title": "Archive Catalog Entry",
+          "elementType": "COMMAND"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "readmodels": [],
+  "screens": [
+    {
+      "id": "3458764655718555913",
+      "tags": [],
+      "groupId": "3458764655718555915",
+      "elementContext": "INTERNAL",
+      "modelContext": "Catalog Management",
+      "context": "INTERNAL",
+      "slice": "slice: Archive Catalog Entry",
+      "title": "screen",
+      "fields": [
+        {
+          "name": "author",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "item id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": true
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "SCREEN",
+      "description": "",
+      "aggregate": "Catalogue Management",
+      "aggregateDependencies": [
+        "Catalogue Management"
+      ],
+      "dependencies": [
+        {
+          "id": "3458764655717997216",
+          "type": "OUTBOUND",
+          "title": "Archive Catalog Entry",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764655723786459",
+          "type": "INBOUND",
+          "title": "Catalog Entry Details",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": true,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": [
+    "Catalogue Management"
+  ]
+}

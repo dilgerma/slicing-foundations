@@ -1,0 +1,147 @@
+{
+  "id": "3458764655738563358",
+  "status": "Created",
+  "title": "slice: Export Item",
+  "context": "Catalog Management",
+  "sliceType": "STATE_CHANGE",
+  "commands": [
+    {
+      "id": "3458764655738191723",
+      "tags": [],
+      "elementContext": "INTERNAL",
+      "modelContext": "Catalog Management",
+      "context": "INTERNAL",
+      "slice": "slice: Export Item",
+      "title": "Publish Item Exported",
+      "fields": [
+        {
+          "name": "author",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "item id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "COMMAND",
+      "description": "",
+      "aggregate": "default",
+      "aggregateDependencies": [],
+      "dependencies": [
+        {
+          "id": "3458764655738191620",
+          "type": "INBOUND",
+          "title": "Item Publishing",
+          "elementType": "AUTOMATION"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "events": [],
+  "readmodels": [],
+  "screens": [],
+  "screenImages": [],
+  "screenLayouts": [],
+  "processors": [
+    {
+      "id": "3458764655738191620",
+      "tags": [],
+      "groupId": "3458764655738191624",
+      "elementContext": "INTERNAL",
+      "modelContext": "Catalog Management",
+      "context": "INTERNAL",
+      "slice": "slice: Export Item",
+      "title": "Item Publishing",
+      "fields": [
+        {
+          "name": "author",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "item id",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "subfields": [],
+          "cardinality": "Single",
+          "idAttribute": false
+        }
+      ],
+      "type": "AUTOMATION",
+      "description": "",
+      "aggregate": "default",
+      "aggregateDependencies": [],
+      "dependencies": [
+        {
+          "id": "3458764655738191723",
+          "type": "OUTBOUND",
+          "title": "Publish Item Exported",
+          "elementType": "COMMAND"
+        },
+        {
+          "id": "3458764655738119679",
+          "type": "INBOUND",
+          "title": "Item Details for publication",
+          "elementType": "READMODEL"
+        },
+        {
+          "id": "3458764655736566009",
+          "type": "INBOUND",
+          "title": "Items to publish",
+          "elementType": "READMODEL"
+        }
+      ],
+      "createsAggregate": false,
+      "triggers": [],
+      "sketched": false,
+      "prototype": {
+        "activeByDefault": false
+      }
+    }
+  ],
+  "tables": [],
+  "specifications": [],
+  "actors": [],
+  "aggregates": []
+}
