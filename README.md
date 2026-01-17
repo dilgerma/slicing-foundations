@@ -1,4 +1,4 @@
-## Nebulit GmbH - Eventmodeling Template
+## Event Sourcing Workshop
 
 ### Setup
 
