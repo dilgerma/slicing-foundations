@@ -1,7 +1,9 @@
 package de.eventmodelers.domain
 
+import de.eventmodelers.catalog.domain.commands.addmissingdata.AddMissingDataCommand
 import de.eventmodelers.catalog.domain.commands.createcatalogentry.CreateCatalogEntryCommand
 import de.eventmodelers.events.CatalogueEntryCreatedEvent
+import de.eventmodelers.events.ItemInformationAddedEvent
 import org.axonframework.commandhandling.CommandHandler
 import org.axonframework.eventsourcing.EventSourcingHandler
 import org.axonframework.modelling.command.AggregateCreationPolicy
@@ -54,5 +56,12 @@ class CatalogueManagementAggregate {
   fun on(event: CatalogueEntryCreatedEvent) {
     // handle event
     this.itemId = event.itemId
+  }
+
+  @CommandHandler
+  fun handle(command: AddMissingDataCommand) {
+    AggregateLifecycle.apply(
+        ItemInformationAddedEvent(
+            command.itemId, command.title, command.author, command.description))
   }
 }

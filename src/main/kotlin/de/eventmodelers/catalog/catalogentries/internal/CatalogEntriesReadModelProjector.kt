@@ -14,15 +14,14 @@ interface CatalogEntriesReadModelRepository : JpaRepository<CatalogEntriesReadMo
 @Component
 class CatalogEntriesReadModelProjector(private val repository: CatalogEntriesReadModelRepository) {
 
-    @EventHandler
-    fun on(event: CatalogueEntryCreatedEvent) {
-        Thread.sleep(15000)
-        val entity = repository.findById(event.itemId).orElse(CatalogEntriesReadModelEntity())
-        entity
-            .apply {
-                itemId = event.itemId
-                title = event.title
-            }
-            .also { repository.save(it) }
-    }
+  @EventHandler
+  fun on(event: CatalogueEntryCreatedEvent) {
+    val entity = repository.findById(event.itemId).orElse(CatalogEntriesReadModelEntity())
+    entity
+        .apply {
+          itemId = event.itemId
+          title = event.title
+        }
+        .also { repository.save(it) }
+  }
 }
