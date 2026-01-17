@@ -1,5 +1,11 @@
 package de.eventmodelers.notifications.internal
 
+import org.aspectj.lang.ProceedingJoinPoint
+import org.aspectj.lang.annotation.Around
+import org.aspectj.lang.annotation.Aspect
+import org.axonframework.messaging.unitofwork.CurrentUnitOfWork
+import org.springframework.stereotype.Component
+
 /**
  * Annotation to mark methods that should trigger a client notification via SSE.
  *
@@ -32,9 +38,18 @@ package de.eventmodelers.notifications.internal
  */
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class NotifyClient(
-    val message: String = "",
-    val type: String = "notification",
-    val includeResult: Boolean = false,
-    val notifyOnError: Boolean = false
-)
+annotation class NotifyClient
+
+
+@Aspect
+@Component
+class NotificationInterceptor(val notificationService: SseNotificationService) {
+    @Around(
+        "@annotation(de.eventmodelers.notifications.internal.NotifyClient) && @annotation(org.axonframework.eventhandling.EventHandler)")
+    fun aroundEventHandler(joinPoint: ProceedingJoinPoint): Any? {
+        val metaData = CurrentUnitOfWork.get().message?.metaData // ... use metadata
+        val result = joinPoint.proceed()
+            notificationService.broadcast(Notification(type = "message"))
+        return result
+    }
+}

@@ -86,8 +86,8 @@ class SseNotificationService {
 
 data class Notification(
     val id: String = java.util.UUID.randomUUID().toString(),
-    val type: String = "notification",
-    val message: String,
+    val type: String = "message",
+    val message: String = "",
     val payload: Map<String, Any?> = emptyMap(),
     val timestamp: Long = System.currentTimeMillis()
 )
