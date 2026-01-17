@@ -1,4 +1,4 @@
-package de.eventmodelers.notifications.internal
+package de.eventmodelers.support.notifications.internal
 
 import org.aspectj.lang.ProceedingJoinPoint
 import org.aspectj.lang.annotation.Around
@@ -45,7 +45,8 @@ annotation class NotifyClient
 @Component
 class NotificationInterceptor(val notificationService: SseNotificationService) {
     @Around(
-        "@annotation(de.eventmodelers.notifications.internal.NotifyClient) && @annotation(org.axonframework.eventhandling.EventHandler)")
+        "@annotation(de.eventmodelers.support.notifications.internal.NotifyClient) && @annotation(org.axonframework.eventhandling.EventHandler)"
+    )
     fun aroundEventHandler(joinPoint: ProceedingJoinPoint): Any? {
         val metaData = CurrentUnitOfWork.get().message?.metaData // ... use metadata
         val result = joinPoint.proceed()

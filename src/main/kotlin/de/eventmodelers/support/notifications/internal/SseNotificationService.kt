@@ -1,5 +1,6 @@
-package de.eventmodelers.notifications.internal
+package de.eventmodelers.support.notifications.internal
 
+import java.util.UUID
 import org.springframework.stereotype.Service
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter
 import java.util.concurrent.ConcurrentHashMap
@@ -85,7 +86,7 @@ class SseNotificationService {
 }
 
 data class Notification(
-    val id: String = java.util.UUID.randomUUID().toString(),
+    val id: String = UUID.randomUUID().toString(),
     val type: String = "message",
     val message: String = "",
     val payload: Map<String, Any?> = emptyMap(),

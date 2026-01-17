@@ -2,7 +2,7 @@ package de.eventmodelers.catalog.catalogentries.internal
 
 import de.eventmodelers.catalog.catalogentries.CatalogEntriesReadModelEntity
 import de.eventmodelers.events.CatalogueEntryCreatedEvent
-import de.eventmodelers.notifications.internal.NotifyClient
+import de.eventmodelers.support.notifications.internal.NotifyClient
 import org.axonframework.eventhandling.EventHandler
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Component

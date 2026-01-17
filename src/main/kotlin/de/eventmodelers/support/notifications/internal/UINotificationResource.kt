@@ -1,4 +1,4 @@
-package de.eventmodelers.notifications.internal
+package de.eventmodelers.support.notifications.internal
 
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
