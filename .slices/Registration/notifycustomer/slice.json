@@ -29,7 +29,7 @@
           "idAttribute": false
         },
         {
-          "name": "user_id",
+          "name": "userId",
           "type": "UUID",
           "subfields": [],
           "cardinality": "Single",
@@ -83,7 +83,7 @@
       "title": "Customer notified",
       "fields": [
         {
-          "name": "user_id",
+          "name": "userId",
           "type": "UUID",
           "subfields": [],
           "cardinality": "Single",

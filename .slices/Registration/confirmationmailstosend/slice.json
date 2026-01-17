@@ -32,7 +32,7 @@
           "idAttribute": false
         },
         {
-          "name": "user_id",
+          "name": "userId",
           "type": "UUID",
           "subfields": [],
           "cardinality": "Single",
@@ -102,7 +102,7 @@
           "type": "SPEC_EVENT",
           "fields": [
             {
-              "name": "user_id",
+              "name": "userId",
               "type": "UUID",
               "subfields": [],
               "cardinality": "Single",
@@ -142,7 +142,7 @@
           "type": "SPEC_EVENT",
           "fields": [
             {
-              "name": "user id",
+              "name": "userId",
               "type": "UUID",
               "subfields": [],
               "cardinality": "Single",
@@ -194,7 +194,7 @@
               "example": ""
             },
             {
-              "name": "user_id",
+              "name": "userId",
               "type": "UUID",
               "subfields": [],
               "cardinality": "Single",
@@ -230,7 +230,7 @@
           "type": "SPEC_EVENT",
           "fields": [
             {
-              "name": "user id",
+              "name": "userId",
               "type": "UUID",
               "subfields": [],
               "cardinality": "Single",
@@ -282,11 +282,11 @@
               "example": ""
             },
             {
-              "name": "user_id",
+              "name": "userId",
               "type": "UUID",
               "subfields": [],
               "cardinality": "Single",
-              "example": "9a2429f5-5ce5-4a0d-aad6-2be7617a4eeb"
+              "example": ""
             },
             {
               "name": "name",

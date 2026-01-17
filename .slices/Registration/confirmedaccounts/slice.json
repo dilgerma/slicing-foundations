@@ -24,7 +24,7 @@
           "idAttribute": false
         },
         {
-          "name": "user_id",
+          "name": "userId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
@@ -98,7 +98,7 @@
           "idAttribute": false
         },
         {
-          "name": "user_id",
+          "name": "userId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",

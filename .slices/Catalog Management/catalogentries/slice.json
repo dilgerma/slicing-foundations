@@ -24,7 +24,7 @@
           "idAttribute": false
         },
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
@@ -72,7 +72,7 @@
       "title": "screen",
       "fields": [
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
@@ -143,7 +143,7 @@
               "example": ""
             },
             {
-              "name": "item id",
+              "name": "itemId",
               "type": "String",
               "subfields": [],
               "cardinality": "Single",
@@ -183,7 +183,7 @@
               "example": ""
             },
             {
-              "name": "item id",
+              "name": "itemId",
               "type": "String",
               "subfields": [],
               "cardinality": "Single",
@@ -208,11 +208,11 @@
           "examples": [
             {
               "title": "Harry Potter",
-              "item id": 1
+              "itemId": 1
             },
             {
               "title": "Lord of the Rings",
-              "item id": 2
+              "itemId": 2
             }
           ],
           "id": "3458764655725315461",
@@ -228,7 +228,7 @@
               "example": ""
             },
             {
-              "name": "item id",
+              "name": "itemId",
               "type": "String",
               "subfields": [],
               "cardinality": "Single",

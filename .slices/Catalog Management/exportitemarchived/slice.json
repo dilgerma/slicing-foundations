@@ -15,7 +15,7 @@
       "title": "Publish Item Archived",
       "fields": [
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
@@ -67,7 +67,7 @@
           "idAttribute": false
         },
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",

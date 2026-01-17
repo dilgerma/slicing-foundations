@@ -14,7 +14,7 @@
       "modelContext": "Catalog Management",
       "context": "INTERNAL",
       "slice": "slice: Item Details for publication",
-      "title": "Item Details for publication",
+      "title": "Item Details Lookup for publication",
       "fields": [
         {
           "name": "author",
@@ -31,7 +31,7 @@
           "idAttribute": false
         },
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",

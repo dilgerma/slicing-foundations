@@ -22,7 +22,7 @@
           "idAttribute": false
         },
         {
-          "name": "user_id",
+          "name": "userId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
@@ -75,7 +75,7 @@
       "title": "Account confirmed",
       "fields": [
         {
-          "name": "user_id",
+          "name": "userId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
@@ -140,7 +140,7 @@
           "idAttribute": false
         },
         {
-          "name": "user_id",
+          "name": "userId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
@@ -200,7 +200,7 @@
           "type": "SPEC_EVENT",
           "fields": [
             {
-              "name": "user_id",
+              "name": "userId",
               "type": "UUID",
               "subfields": [],
               "cardinality": "Single",
@@ -241,7 +241,7 @@
           "type": "SPEC_EVENT",
           "fields": [
             {
-              "name": "user id",
+              "name": "userId",
               "type": "UUID",
               "subfields": [],
               "cardinality": "Single",
@@ -284,7 +284,7 @@
               "example": "martin@nebulit.de"
             },
             {
-              "name": "user_id",
+              "name": "userId",
               "type": "String",
               "subfields": [],
               "cardinality": "Single",
@@ -312,7 +312,7 @@
           "type": "SPEC_EVENT",
           "fields": [
             {
-              "name": "user_id",
+              "name": "userId",
               "type": "String",
               "subfields": [],
               "cardinality": "Single",

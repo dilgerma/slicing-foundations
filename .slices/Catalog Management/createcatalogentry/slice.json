@@ -15,7 +15,7 @@
       "title": "Create Catalog Entry",
       "fields": [
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
@@ -63,7 +63,7 @@
           "elementType": "SCREEN"
         }
       ],
-      "createsAggregate": false,
+      "createsAggregate": true,
       "triggers": [],
       "sketched": false,
       "prototype": {
@@ -96,7 +96,7 @@
           "idAttribute": false
         },
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
@@ -120,7 +120,7 @@
         {
           "id": "3458764655738119679",
           "type": "OUTBOUND",
-          "title": "Item Details for publication",
+          "title": "Item Details Lookup for publication",
           "elementType": "READMODEL"
         },
         {
@@ -177,7 +177,7 @@
           "idAttribute": false
         },
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
@@ -217,7 +217,99 @@
   "screenLayouts": [],
   "processors": [],
   "tables": [],
-  "specifications": [],
+  "specifications": [
+    {
+      "vertical": false,
+      "id": "3458764655826436475",
+      "sliceName": "<p>slice: Create Catalog Entry</p>",
+      "title": "spec: Create Catalog Entry",
+      "given": [],
+      "when": [
+        {
+          "title": "Create Catalog Entry",
+          "tags": [],
+          "id": "3458764655826436476",
+          "index": 0,
+          "specRow": -1,
+          "type": "SPEC_COMMAND",
+          "fields": [
+            {
+              "name": "itemId",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "example": ""
+            },
+            {
+              "name": "title",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "example": ""
+            },
+            {
+              "name": "author",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "example": ""
+            },
+            {
+              "name": "description",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "example": ""
+            }
+          ],
+          "linkedId": "3458764655717997017"
+        }
+      ],
+      "then": [
+        {
+          "title": "Catalogue entry created",
+          "tags": [],
+          "id": "3458764655826436478",
+          "index": 0,
+          "specRow": -1,
+          "type": "SPEC_EVENT",
+          "fields": [
+            {
+              "name": "author",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "example": ""
+            },
+            {
+              "name": "description",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "example": ""
+            },
+            {
+              "name": "itemId",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "example": ""
+            },
+            {
+              "name": "title",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "example": ""
+            }
+          ],
+          "linkedId": "3458764655552383979"
+        }
+      ],
+      "comments": [],
+      "linkedId": "3458764655724615131"
+    }
+  ],
   "actors": [],
   "aggregates": [
     "Catalogue Management"

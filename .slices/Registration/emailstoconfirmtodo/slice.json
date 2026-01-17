@@ -21,7 +21,7 @@
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
-          "idAttribute": false
+          "idAttribute": true
         },
         {
           "name": "token",
@@ -31,7 +31,7 @@
           "idAttribute": false
         },
         {
-          "name": "user_id",
+          "name": "userId",
           "type": "UUID",
           "subfields": [],
           "cardinality": "Single",

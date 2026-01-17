@@ -29,7 +29,7 @@
           "idAttribute": false
         },
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
@@ -96,7 +96,7 @@
           "idAttribute": false
         },
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
@@ -120,7 +120,7 @@
         {
           "id": "3458764655738119679",
           "type": "OUTBOUND",
-          "title": "Item Details for publication",
+          "title": "Item Details Lookup for publication",
           "elementType": "READMODEL"
         },
         {
@@ -171,7 +171,7 @@
           "idAttribute": false
         },
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",

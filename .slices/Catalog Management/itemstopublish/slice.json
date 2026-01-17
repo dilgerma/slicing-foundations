@@ -17,7 +17,7 @@
       "title": "Items to publish",
       "fields": [
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",

@@ -15,7 +15,7 @@
       "title": "Publish Item",
       "fields": [
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
@@ -61,7 +61,7 @@
       "title": "Item published",
       "fields": [
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
@@ -78,7 +78,7 @@
         {
           "id": "3458764655738119679",
           "type": "OUTBOUND",
-          "title": "Item Details for publication",
+          "title": "Item Details Lookup for publication",
           "elementType": "READMODEL"
         },
         {
@@ -115,7 +115,7 @@
       "title": "screen",
       "fields": [
         {
-          "name": "item id",
+          "name": "itemId",
           "type": "String",
           "subfields": [],
           "cardinality": "Single",
