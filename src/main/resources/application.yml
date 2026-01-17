@@ -25,6 +25,10 @@ axon:
     general: jackson
   axonserver:
     enabled: false
+  #eventhandling:
+  #  processors:
+  #    catalog:
+  #      mode: subscribing
 
 #axoniq:
 #  console:

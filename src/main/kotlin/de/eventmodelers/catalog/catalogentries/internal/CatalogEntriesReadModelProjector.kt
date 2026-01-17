@@ -3,7 +3,6 @@ package de.eventmodelers.catalog.catalogentries.internal
 import de.eventmodelers.catalog.ProcessingGroups
 import de.eventmodelers.catalog.catalogentries.CatalogEntriesReadModelEntity
 import de.eventmodelers.events.CatalogueEntryCreatedEvent
-import de.eventmodelers.support.notifications.internal.NotifyClient
 import org.axonframework.config.ProcessingGroup
 import org.axonframework.eventhandling.EventHandler
 import org.springframework.data.jpa.repository.JpaRepository
@@ -15,15 +14,15 @@ interface CatalogEntriesReadModelRepository : JpaRepository<CatalogEntriesReadMo
 @Component
 class CatalogEntriesReadModelProjector(private val repository: CatalogEntriesReadModelRepository) {
 
-  @NotifyClient
-  @EventHandler
-  fun on(event: CatalogueEntryCreatedEvent) {
-    val entity = repository.findById(event.itemId).orElse(CatalogEntriesReadModelEntity())
-    entity
-        .apply {
-          itemId = event.itemId
-          title = event.title
-        }
-        .also { repository.save(it) }
-  }
+    @EventHandler
+    fun on(event: CatalogueEntryCreatedEvent) {
+        Thread.sleep(15000)
+        val entity = repository.findById(event.itemId).orElse(CatalogEntriesReadModelEntity())
+        entity
+            .apply {
+                itemId = event.itemId
+                title = event.title
+            }
+            .also { repository.save(it) }
+    }
 }
