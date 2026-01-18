@@ -21,6 +21,7 @@ spring:
     locations: classpath:db/migration
     user: postgres
     password: postgres
+    enabled: false
 
 axon:
   serializer:
