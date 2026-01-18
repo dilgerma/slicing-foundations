@@ -18,6 +18,10 @@ class CatalogEntriesReadModelEntity {
 
     @Column(name = "title")
     var title: String? = null
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @Column(name = "createdDate")
+    var createdDate: LocalDateTime? = null
 }
 
 data class CatalogEntriesReadModel(val data: List<CatalogEntriesReadModelEntity>) : ReadModel
