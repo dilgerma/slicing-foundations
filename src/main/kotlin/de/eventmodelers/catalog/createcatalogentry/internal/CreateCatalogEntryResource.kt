@@ -44,7 +44,8 @@ class CreateCatalogEntryResource(private var commandGateway: CommandGateway) {
     @CrossOrigin
     @PostMapping("/createcatalogentry/{id}")
     fun processCommand(
-        @RequestBody payload: CreateCatalogEntryPayload): CompletableFuture<Any> {
+        @RequestBody payload: CreateCatalogEntryPayload,
+        @RequestHeader(SESSION_ID_HEADER) sessionId: String): CompletableFuture<Any> {
         return commandGateway.send(
             CreateCatalogEntryCommand(
                 itemId = payload.itemId,
@@ -52,7 +53,9 @@ class CreateCatalogEntryResource(private var commandGateway: CommandGateway) {
                 author = payload.author,
                 description = payload.description,
                 createdDate = LocalDateTime.now()
-            )
+            ),
+            // add meta data to command
+            MetaData.with(SESSION_ID_HEADER, sessionId)
         )
     }
 }
