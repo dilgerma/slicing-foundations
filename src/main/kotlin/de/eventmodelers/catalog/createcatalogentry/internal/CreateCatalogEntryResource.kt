@@ -1,6 +1,7 @@
 package de.eventmodelers.catalog.createcatalogentry.internal
 
 import de.eventmodelers.catalog.domain.commands.createcatalogentry.CreateCatalogEntryCommand
+import java.time.LocalDateTime
 import java.util.concurrent.CompletableFuture
 import mu.KotlinLogging
 import org.axonframework.commandhandling.gateway.CommandGateway
@@ -44,6 +45,7 @@ class CreateCatalogEntryResource(private var commandGateway: CommandGateway) {
             itemId = payload.itemId,
             title = payload.title,
             author = payload.author,
-            description = payload.description))
+            description = payload.description,
+            createdDate = LocalDateTime.now()))
   }
 }

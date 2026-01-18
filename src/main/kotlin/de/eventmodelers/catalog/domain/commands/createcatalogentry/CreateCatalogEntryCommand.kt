@@ -1,6 +1,7 @@
 package de.eventmodelers.catalog.domain.commands.createcatalogentry
 
 import de.eventmodelers.common.Command
+import java.time.LocalDateTime
 import org.axonframework.modelling.command.TargetAggregateIdentifier
 
 /*
@@ -10,5 +11,6 @@ data class CreateCatalogEntryCommand(
     @TargetAggregateIdentifier var itemId: String,
     var title: String,
     var author: String,
-    var description: String
+    var description: String,
+    var createdDate: LocalDateTime = LocalDateTime.now(),
 ) : Command

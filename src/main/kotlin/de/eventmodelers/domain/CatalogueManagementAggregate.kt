@@ -15,53 +15,59 @@ import org.axonframework.spring.stereotype.Aggregate
 @Aggregate
 class CatalogueManagementAggregate {
 
-  @AggregateIdentifier var itemId: String? = null
+    @AggregateIdentifier
+    var itemId: String? = null
 
-  /*
-  //AI-TODO:
+    /*
+    //AI-TODO:
 
-  # Spec Start
-  Title: spec: Create Catalog Entry
-  ### Given (Events): None
-  ### When (Command):
-  * 'Create Catalog Entry' (SPEC_COMMAND)
-  Fields:
-  - itemId:
-  - title:
-  - author:
-  - description:
-  ### Then:
-  * 'Catalogue entry created' (SPEC_EVENT)
-  Fields:
-  - author:
-  - description:
-  - itemId:
-  - title:
-  # Spec End
-  */
+    # Spec Start
+    Title: spec: Create Catalog Entry
+    ### Given (Events): None
+    ### When (Command):
+    * 'Create Catalog Entry' (SPEC_COMMAND)
+    Fields:
+    - itemId:
+    - title:
+    - author:
+    - description:
+    ### Then:
+    * 'Catalogue entry created' (SPEC_EVENT)
+    Fields:
+    - author:
+    - description:
+    - itemId:
+    - title:
+    # Spec End
+    */
 
-  @CreationPolicy(AggregateCreationPolicy.CREATE_IF_MISSING)
-  @CommandHandler
-  fun handle(command: CreateCatalogEntryCommand) {
+    @CreationPolicy(AggregateCreationPolicy.CREATE_IF_MISSING)
+    @CommandHandler
+    fun handle(command: CreateCatalogEntryCommand) {
 
-    AggregateLifecycle.apply(
-        CatalogueEntryCreatedEvent(
-            itemId = command.itemId,
-            title = command.title,
-            author = command.author,
-            description = command.description))
-  }
+        AggregateLifecycle.apply(
+            CatalogueEntryCreatedEvent(
+                itemId = command.itemId,
+                title = command.title,
+                author = command.author,
+                description = command.description,
+                createdDate = command.createdDate
+            )
+        )
+    }
 
-  @EventSourcingHandler
-  fun on(event: CatalogueEntryCreatedEvent) {
-    // handle event
-    this.itemId = event.itemId
-  }
+    @EventSourcingHandler
+    fun on(event: CatalogueEntryCreatedEvent) {
+        // handle event
+        this.itemId = event.itemId
+    }
 
-  @CommandHandler
-  fun handle(command: AddMissingDataCommand) {
-    AggregateLifecycle.apply(
-        ItemInformationAddedEvent(
-            command.itemId, command.title, command.author, command.description))
-  }
+    @CommandHandler
+    fun handle(command: AddMissingDataCommand) {
+        AggregateLifecycle.apply(
+            ItemInformationAddedEvent(
+                command.itemId, command.title, command.author, command.description
+            )
+        )
+    }
 }

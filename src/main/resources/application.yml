@@ -1,5 +1,8 @@
 # DataSource Configuration
 spring:
+  docker:
+    compose:
+      lifecycle-management: start_and_stop
 
   jpa:
     show-sql: false
@@ -39,3 +42,7 @@ axon:
 application:
   debug:
     enabled: true
+
+#createcatalogentry:
+#fakeevents:
+#    enabled: true
