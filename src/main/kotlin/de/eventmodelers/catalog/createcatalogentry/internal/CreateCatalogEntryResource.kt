@@ -15,7 +15,8 @@ data class CreateCatalogEntryPayload(
     var itemId: String,
     var title: String,
     var author: String,
-    var description: String
+    var description: String,
+    var isbn: String,
 )
 
 /*
@@ -32,9 +33,10 @@ class CreateCatalogEntryResource(private var commandGateway: CommandGateway) {
       @RequestParam itemId: String,
       @RequestParam title: String,
       @RequestParam author: String,
-      @RequestParam description: String
+      @RequestParam description: String,
+      @RequestParam isbn: String
   ): CompletableFuture<Any> {
-    return commandGateway.send(CreateCatalogEntryCommand(itemId, title, author, description))
+    return commandGateway.send(CreateCatalogEntryCommand(itemId, title, author, description, isbn))
   }
 
   @CrossOrigin
@@ -46,6 +48,7 @@ class CreateCatalogEntryResource(private var commandGateway: CommandGateway) {
             title = payload.title,
             author = payload.author,
             description = payload.description,
+            isbn = payload.isbn,
             createdDate = LocalDateTime.now()))
   }
 }

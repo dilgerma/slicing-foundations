@@ -17,8 +17,8 @@ class CatalogEntriesReadModelProjector(private val repository: CatalogEntriesRea
 
   @EventHandler
   fun on(event: CatalogueEntryCreatedEvent) {
-      //wait for 30 seconds
-      Thread.sleep(5000)
+    // wait for 30 seconds
+    Thread.sleep(5000)
     val entity = repository.findById(event.itemId).orElse(CatalogEntriesReadModelEntity())
     entity
         .apply {
@@ -28,8 +28,8 @@ class CatalogEntriesReadModelProjector(private val repository: CatalogEntriesRea
         .also { repository.save(it) }
   }
 
-    @ResetHandler
-    fun onReset() {
-        repository.deleteAll()
-    }
+  @ResetHandler
+  fun onReset() {
+    repository.deleteAll()
+  }
 }
