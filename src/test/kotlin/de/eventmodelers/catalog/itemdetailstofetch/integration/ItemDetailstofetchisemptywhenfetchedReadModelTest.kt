@@ -7,9 +7,11 @@ import de.eventmodelers.catalog.itemdetailstofetch.ItemDetailsToFetchReadModelQu
 import de.eventmodelers.common.support.BaseIntegrationTest
 import de.eventmodelers.common.support.RandomData
 import de.eventmodelers.common.support.awaitUntilAssserted
+import de.eventmodelers.support.metadata.SESSION_ID_HEADER
 import java.util.*
 import org.assertj.core.api.Assertions.assertThat
 import org.axonframework.commandhandling.gateway.CommandGateway
+import org.axonframework.messaging.MetaData
 import org.axonframework.queryhandling.QueryGateway
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -29,12 +31,13 @@ class ItemDetailstofetchisemptywhenfetchedReadModelTest : BaseIntegrationTest() 
     var createCatalogEntryCommand =
         RandomData.newInstance<CreateCatalogEntryCommand> { this.itemId = itemId }
 
-    commandGateway.sendAndWait<Any>(createCatalogEntryCommand)
+    commandGateway.sendAndWait<Any>(
+        createCatalogEntryCommand, MetaData.with(SESSION_ID_HEADER, "1234"))
 
     var addMissingDataCommand =
         RandomData.newInstance<AddMissingDataCommand> { this.itemId = itemId }
 
-    commandGateway.sendAndWait<Any>(addMissingDataCommand)
+    commandGateway.sendAndWait<Any>(addMissingDataCommand, MetaData.with(SESSION_ID_HEADER, "1234"))
 
     awaitUntilAssserted {
       var readModel =

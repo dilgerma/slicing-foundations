@@ -57,12 +57,5 @@ application:
 logging:
   threshold:
     console:
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health
-      cors:
-        allowed-origins: "*"
 
 #fakeevents:

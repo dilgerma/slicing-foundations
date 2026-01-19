@@ -5,6 +5,7 @@ import de.eventmodelers.common.Event
 import de.eventmodelers.common.support.RandomData
 import de.eventmodelers.domain.CatalogueManagementAggregate
 import de.eventmodelers.events.CatalogueEntryCreatedEvent
+import java.time.LocalDateTime
 import org.axonframework.test.aggregate.AggregateTestFixture
 import org.axonframework.test.aggregate.FixtureConfiguration
 import org.junit.jupiter.api.BeforeEach
@@ -34,6 +35,7 @@ class CreateCatalogEntryTest {
                 author = RandomData.newInstance {},
                 description = RandomData.newInstance {},
                 isbn = RandomData.newInstance {},
+                createdDate = LocalDateTime.now(),
             )
 
         // THEN
@@ -46,6 +48,7 @@ class CreateCatalogEntryTest {
                 this.itemId = command.itemId
                 this.title = command.title
                 isbn = command.isbn
+                createdDate = command.createdDate
             })
 
         fixture
