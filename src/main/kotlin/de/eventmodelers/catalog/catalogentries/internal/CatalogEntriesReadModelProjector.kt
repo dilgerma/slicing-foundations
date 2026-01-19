@@ -29,8 +29,8 @@ class CatalogEntriesReadModelProjector(private val repository: CatalogEntriesRea
             .also { repository.save(it) }
     }
 
-    @ResetHandler
-    fun onReset() {
-        repository.deleteAll()
-    }
+  @ResetHandler
+  fun onReset() {
+    repository.deleteAll()
+  }
 }
