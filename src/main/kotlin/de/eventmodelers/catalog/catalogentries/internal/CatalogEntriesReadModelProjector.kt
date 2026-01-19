@@ -15,19 +15,19 @@ interface CatalogEntriesReadModelRepository : JpaRepository<CatalogEntriesReadMo
 @Component
 class CatalogEntriesReadModelProjector(private val repository: CatalogEntriesReadModelRepository) {
 
-    @EventHandler
-    fun on(event: CatalogueEntryCreatedEvent) {
-        //wait for 30 seconds
-        Thread.sleep(5000)
-        val entity = repository.findById(event.itemId).orElse(CatalogEntriesReadModelEntity())
-        entity
-            .apply {
-                itemId = event.itemId
-                title = event.title
-                createdDate = event.createdDate
-            }
-            .also { repository.save(it) }
-    }
+  @EventHandler
+  fun on(event: CatalogueEntryCreatedEvent) {
+    // wait for 30 seconds
+    Thread.sleep(5000)
+    val entity = repository.findById(event.itemId).orElse(CatalogEntriesReadModelEntity())
+    entity
+        .apply {
+          itemId = event.itemId
+          title = event.title
+          createdDate = event.createdDate
+        }
+        .also { repository.save(it) }
+  }
 
   @ResetHandler
   fun onReset() {
