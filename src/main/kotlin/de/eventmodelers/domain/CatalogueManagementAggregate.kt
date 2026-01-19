@@ -49,7 +49,9 @@ class CatalogueManagementAggregate {
             itemId = command.itemId,
             title = command.title,
             author = command.author,
-            description = command.description))
+            description = command.description,
+            isbn = command.isbn,
+        ))
   }
 
   @EventSourcingHandler
