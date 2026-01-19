@@ -1,6 +1,12 @@
 # DataSource Configuration
 spring:
-
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: health
+        cors:
+          allowed-origins: "*"
   jpa:
     show-sql: false
     hibernate:
@@ -11,6 +17,8 @@ spring:
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 30
 
   # Flyway Configuration
   flyway:
@@ -18,7 +26,7 @@ spring:
     locations: classpath:db/migration
     user: postgres
     password: postgres
-
+    enabled: false
 axon:
   serializer:
     ## xstream is not compatible anymore with jdk17+
@@ -39,3 +47,4 @@ axon:
 application:
   debug:
     enabled: true
+
