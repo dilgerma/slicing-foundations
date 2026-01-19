@@ -1,16 +1,16 @@
 # DataSource Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+      cors:
+        allowed-origins: "*"
 spring:
   docker:
     compose:
       lifecycle-management: start_and_stop
 
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: health
-        cors:
-          allowed-origins: "*"
   jpa:
     show-sql: false
     hibernate:
