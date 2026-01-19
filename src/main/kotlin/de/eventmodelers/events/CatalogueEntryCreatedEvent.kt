@@ -9,5 +9,6 @@ data class CatalogueEntryCreatedEvent(
     var author: String,
     var description: String,
     var itemId: String,
-    var title: String
+    var title: String,
+    var isbn: String,
 ) : Event
