@@ -1,0 +1,3 @@
+createcatalogentry:
+  fakeevents:
+    enabled: false

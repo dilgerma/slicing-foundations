@@ -25,7 +25,7 @@ class ReservationAggregate {
 
   @AggregateIdentifier var reservationId: String? = null
 
-    @CreationPolicy(AggregateCreationPolicy.CREATE_IF_MISSING)
+  @CreationPolicy(AggregateCreationPolicy.CREATE_IF_MISSING)
   @CommandHandler
   fun handle(command: ReserveBookCommand) {
 

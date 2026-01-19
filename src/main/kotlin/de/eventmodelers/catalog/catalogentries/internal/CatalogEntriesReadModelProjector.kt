@@ -2,7 +2,7 @@ package de.eventmodelers.catalog.catalogentries.internal
 
 import de.eventmodelers.catalog.catalogentries.CatalogEntriesReadModelEntity
 import de.eventmodelers.events.CatalogueEntryCreatedEvent
-import de.eventmodelers.support.notifications.internal.NotifyClient
+import de.eventmodelers.support.notifications.NotifyClient
 import org.axonframework.eventhandling.EventHandler
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Component
@@ -45,10 +45,9 @@ Boardlink: https://miro.com/app/board/uXjVJo5Vvho=/?moveToWidget=345876465571855
 @Component
 class CatalogEntriesReadModelProjector(var repository: CatalogEntriesReadModelRepository) {
 
-    @NotifyClient
+  @NotifyClient
   @EventHandler
   fun on(event: CatalogueEntryCreatedEvent) {
-      Thread.sleep(15000)
     // throws exception if not available (adjust logic)
     val entity = this.repository.findById(event.itemId).orElse(CatalogEntriesReadModelEntity())
     entity

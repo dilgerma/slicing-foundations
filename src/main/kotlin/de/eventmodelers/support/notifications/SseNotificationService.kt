@@ -1,10 +1,10 @@
-package de.eventmodelers.support.notifications.internal
+package de.eventmodelers.support.notifications
 
 import java.util.UUID
-import org.springframework.stereotype.Service
-import org.springframework.web.servlet.mvc.method.annotation.SseEmitter
 import java.util.concurrent.ConcurrentHashMap
 import mu.KotlinLogging
+import org.springframework.stereotype.Service
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter
 
 @Service
 class SseNotificationService {
@@ -12,7 +12,7 @@ class SseNotificationService {
     private val logger = KotlinLogging.logger {}
     private val emitters = ConcurrentHashMap<String, SseEmitter>()
 
-    fun subscribe(sessionId: String, timeout: Long = 0L): SseEmitter {
+    fun subscribe(sessionId: String, timeout: Long = 30_000L): SseEmitter {
         val emitter = SseEmitter(timeout)
 
         emitter.onCompletion {
@@ -30,6 +30,14 @@ class SseNotificationService {
             emitters.remove(sessionId)
         }
 
+        emitters[sessionId]?.let { oldEmitter ->
+            logger.info { "Closing existing SSE connection for session: $sessionId" }
+            try {
+                oldEmitter.complete()
+            } catch (ex: Exception) {
+                logger.debug { "Error completing old emitter for session $sessionId: ${ex.message}" }
+            }
+        }
         emitters[sessionId] = emitter
         logger.info { "Client subscribed with session: $sessionId" }
 
@@ -45,10 +53,7 @@ class SseNotificationService {
 
         return try {
             emitter.send(
-                SseEmitter.event()
-                    .id(notification.id)
-                    .name(notification.type)
-                    .data(notification)
+                SseEmitter.event().id(notification.id).name(notification.type).data(notification)
             )
             logger.debug { "Notification sent to session $sessionId: ${notification.message}" }
             true
@@ -65,10 +70,7 @@ class SseNotificationService {
         emitters.forEach { (sessionId, emitter) ->
             try {
                 emitter.send(
-                    SseEmitter.event()
-                        .id(notification.id)
-                        .name(notification.type)
-                        .data(notification)
+                    SseEmitter.event().id(notification.id).name(notification.type).data(notification)
                 )
             } catch (ex: Exception) {
                 logger.warn { "Failed to broadcast to session $sessionId, marking for removal" }

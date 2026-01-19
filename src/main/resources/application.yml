@@ -1,12 +1,5 @@
 # DataSource Configuration
 spring:
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: health
-        cors:
-          allowed-origins: "*"
   jpa:
     show-sql: false
     hibernate:
@@ -44,3 +37,18 @@ application:
   debug:
     enabled: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+      cors:
+        allowed-origins: "http://localhost:8081"
+        allowed-methods: GET,POST,OPTIONS
+
+notifications:
+  enabled: true
+
+createcatalogentry:
+  fakeevents:
+    enabled: true

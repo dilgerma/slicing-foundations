@@ -17,5 +17,5 @@ class ItemExportProcessor : Processor {
   @Autowired lateinit var commandGateway: CommandGateway
   @Autowired lateinit var queryGateway: QueryGateway
 
-  //TODO implement
+  // TODO implement
 }

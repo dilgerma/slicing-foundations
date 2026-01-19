@@ -11,8 +11,7 @@ Boardlink: https://miro.com/app/board/uXjVJo5Vvho=/?moveToWidget=345876465539235
 */
 @Entity
 class ConfirmedAccountsReadModelEntity {
-    @Id
-  @Column(name = "email") var email: String? = null
+  @Id @Column(name = "email") var email: String? = null
 
   @Column(name = "user_id") var user_id: String? = null
 

@@ -62,7 +62,8 @@ class AxonConfig {
 
 @Modulith(
     systemName = "System",
-    sharedModules = ["de.eventmodelers.common", "de.eventmodelers.domain"],
+    sharedModules =
+        ["de.eventmodelers.common", "de.eventmodelers.domain"],
     useFullyQualifiedModuleNames = true)
 @EnableJpaRepositories
 @SpringBootApplication
