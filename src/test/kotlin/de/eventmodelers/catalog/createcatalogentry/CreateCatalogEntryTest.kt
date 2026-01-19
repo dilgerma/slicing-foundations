@@ -32,7 +32,9 @@ class CreateCatalogEntryTest {
             itemId = RandomData.newInstance {},
             title = RandomData.newInstance {},
             author = RandomData.newInstance {},
-            description = RandomData.newInstance {})
+            description = RandomData.newInstance {},
+            isbn = RandomData.newInstance {},
+        )
 
     // THEN
     val expectedEvents = mutableListOf<Event>()
@@ -43,6 +45,7 @@ class CreateCatalogEntryTest {
           this.description = command.description
           this.itemId = command.itemId
           this.title = command.title
+          isbn = command.isbn
         })
 
     fixture
