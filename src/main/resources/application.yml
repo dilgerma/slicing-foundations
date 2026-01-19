@@ -1,4 +1,11 @@
 # DataSource Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+      cors:
+        allowed-origins: "*"
 spring:
   docker:
     compose:
