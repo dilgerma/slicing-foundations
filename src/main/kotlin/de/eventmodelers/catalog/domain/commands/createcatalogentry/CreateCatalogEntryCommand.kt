@@ -12,5 +12,6 @@ data class CreateCatalogEntryCommand(
     var title: String,
     var author: String,
     var description: String,
-    var createdDate: LocalDateTime = LocalDateTime.now(),
+    var isbn: String,
+    var createdDate: LocalDateTime = LocalDateTime.now()
 ) : Command
