@@ -13,42 +13,45 @@ import org.junit.jupiter.api.Test
 /** Boardlink: https://miro.com/app/board/uXjVJo5Vvho=/?moveToWidget=3458764655826436475 */
 class CreateCatalogEntryTest {
 
-  private lateinit var fixture: FixtureConfiguration<CatalogueManagementAggregate>
+    private lateinit var fixture: FixtureConfiguration<CatalogueManagementAggregate>
 
-  @BeforeEach
-  fun setUp() {
-    fixture = AggregateTestFixture(CatalogueManagementAggregate::class.java)
-  }
+    @BeforeEach
+    fun setUp() {
+        fixture = AggregateTestFixture(CatalogueManagementAggregate::class.java)
+    }
 
-  @Test
-  fun `Create Catalog Entry Test`() {
+    @Test
+    fun `Create Catalog Entry Test`() {
 
-    // GIVEN
-    val events = mutableListOf<Event>()
+        // GIVEN
+        val events = mutableListOf<Event>()
 
-    // WHEN
-    val command =
-        CreateCatalogEntryCommand(
-            itemId = RandomData.newInstance {},
-            title = RandomData.newInstance {},
-            author = RandomData.newInstance {},
-            description = RandomData.newInstance {})
+        // WHEN
+        val command =
+            CreateCatalogEntryCommand(
+                itemId = RandomData.newInstance {},
+                title = RandomData.newInstance {},
+                author = RandomData.newInstance {},
+                description = RandomData.newInstance {},
+                isbn = RandomData.newInstance {},
+            )
 
-    // THEN
-    val expectedEvents = mutableListOf<Event>()
+        // THEN
+        val expectedEvents = mutableListOf<Event>()
 
-    expectedEvents.add(
-        RandomData.newInstance<CatalogueEntryCreatedEvent> {
-          this.author = command.author
-          this.description = command.description
-          this.itemId = command.itemId
-          this.title = command.title
-        })
+        expectedEvents.add(
+            RandomData.newInstance<CatalogueEntryCreatedEvent> {
+                this.author = command.author
+                this.description = command.description
+                this.itemId = command.itemId
+                this.title = command.title
+                isbn = command.isbn
+            })
 
-    fixture
-        .given(events)
-        .`when`(command)
-        .expectSuccessfulHandlerExecution()
-        .expectEvents(*expectedEvents.toTypedArray())
-  }
+        fixture
+            .given(events)
+            .`when`(command)
+            .expectSuccessfulHandlerExecution()
+            .expectEvents(*expectedEvents.toTypedArray())
+    }
 }

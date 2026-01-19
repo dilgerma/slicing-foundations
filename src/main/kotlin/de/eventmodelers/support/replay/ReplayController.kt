@@ -2,6 +2,7 @@
 package de.eventmodelers.support.replay
 
 import java.util.function.Consumer
+import kotlin.jvm.java
 import org.axonframework.config.EventProcessingConfiguration
 import org.axonframework.eventhandling.TrackingEventProcessor
 import org.springframework.beans.factory.annotation.Autowired
@@ -9,7 +10,6 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RestController
-import kotlin.jvm.java
 
 @RestController
 class ReplayController {
@@ -20,8 +20,7 @@ class ReplayController {
 
     eventProcessingConfiguration!!
         .eventProcessor<TrackingEventProcessor?>(
-            processingGroup, TrackingEventProcessor::class.java
-        )
+            processingGroup, TrackingEventProcessor::class.java)
         .ifPresent(
             Consumer { trackingEventProcessor: TrackingEventProcessor? ->
               trackingEventProcessor!!.shutDown()

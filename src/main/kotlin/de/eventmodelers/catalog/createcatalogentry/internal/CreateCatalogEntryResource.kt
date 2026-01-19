@@ -19,7 +19,8 @@ data class CreateCatalogEntryPayload(
     var itemId: String,
     var title: String,
     var author: String,
-    var description: String
+    var description: String,
+    var isbn: String,
 )
 
 /*
@@ -30,16 +31,17 @@ class CreateCatalogEntryResource(private var commandGateway: CommandGateway) {
 
     var logger = KotlinLogging.logger {}
 
-    @CrossOrigin
-    @PostMapping("/debug/createcatalogentry")
-    fun processDebugCommand(
-        @RequestParam itemId: String,
-        @RequestParam title: String,
-        @RequestParam author: String,
-        @RequestParam description: String
-    ): CompletableFuture<Any> {
-        return commandGateway.send(CreateCatalogEntryCommand(itemId, title, author, description))
-    }
+  @CrossOrigin
+  @PostMapping("/debug/createcatalogentry")
+  fun processDebugCommand(
+      @RequestParam itemId: String,
+      @RequestParam title: String,
+      @RequestParam author: String,
+      @RequestParam description: String,
+      @RequestParam isbn: String
+  ): CompletableFuture<Any> {
+    return commandGateway.send(CreateCatalogEntryCommand(itemId, title, author, description, isbn))
+  }
 
     @CrossOrigin
     @PostMapping("/createcatalogentry/{id}")
@@ -52,7 +54,8 @@ class CreateCatalogEntryResource(private var commandGateway: CommandGateway) {
                 title = payload.title,
                 author = payload.author,
                 description = payload.description,
-                createdDate = LocalDateTime.now()
+                createdDate = LocalDateTime.now(),
+                isbn = payload.isbn
             ),
             // add meta data to command
             MetaData.with(SESSION_ID_HEADER, sessionId)

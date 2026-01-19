@@ -41,7 +41,9 @@
       "Bash(bash:*)",
       "Bash(./mvnw compile:*)",
       "Bash(./gradlew build:*)",
-      "WebFetch(domain:supabase.com)"
+      "WebFetch(domain:supabase.com)",
+      "Bash(./mvnw spotless:apply:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

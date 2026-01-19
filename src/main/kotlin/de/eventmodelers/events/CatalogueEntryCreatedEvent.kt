@@ -15,5 +15,6 @@ data class CatalogueEntryCreatedEvent(
     @EncryptionKeyIdentifier
     var itemId: String,
     var title: String,
+    var isbn: String,
     var createdDate: LocalDateTime
 ) : Event
