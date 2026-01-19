@@ -1,12 +1,12 @@
 # DataSource Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+      cors:
+        allowed-origins: "*"
 spring:
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: health
-        cors:
-          allowed-origins: "*"
   jpa:
     show-sql: false
     hibernate:
