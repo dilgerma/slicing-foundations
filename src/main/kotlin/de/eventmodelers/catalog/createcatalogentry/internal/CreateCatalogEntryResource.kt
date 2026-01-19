@@ -8,7 +8,6 @@ import mu.KotlinLogging
 import org.axonframework.commandhandling.gateway.CommandGateway
 import org.axonframework.messaging.MetaData
 import org.springframework.web.bind.annotation.CrossOrigin
-import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestHeader
@@ -29,7 +28,7 @@ Boardlink: https://miro.com/app/board/uXjVJo5Vvho=/?moveToWidget=345876465571799
 @RestController
 class CreateCatalogEntryResource(private var commandGateway: CommandGateway) {
 
-    var logger = KotlinLogging.logger {}
+  var logger = KotlinLogging.logger {}
 
   @CrossOrigin
   @PostMapping("/debug/createcatalogentry")
@@ -43,22 +42,21 @@ class CreateCatalogEntryResource(private var commandGateway: CommandGateway) {
     return commandGateway.send(CreateCatalogEntryCommand(itemId, title, author, description, isbn))
   }
 
-    @CrossOrigin
-    @PostMapping("/createcatalogentry/{id}")
-    fun processCommand(
-        @RequestBody payload: CreateCatalogEntryPayload,
-        @RequestHeader(SESSION_ID_HEADER) sessionId: String): CompletableFuture<Any> {
-        return commandGateway.send(
-            CreateCatalogEntryCommand(
-                itemId = payload.itemId,
-                title = payload.title,
-                author = payload.author,
-                description = payload.description,
-                createdDate = LocalDateTime.now(),
-                isbn = payload.isbn
-            ),
-            // add meta data to command
-            MetaData.with(SESSION_ID_HEADER, sessionId)
-        )
-    }
+  @CrossOrigin
+  @PostMapping("/createcatalogentry/{id}")
+  fun processCommand(
+      @RequestBody payload: CreateCatalogEntryPayload,
+      @RequestHeader(SESSION_ID_HEADER) sessionId: String
+  ): CompletableFuture<Any> {
+    return commandGateway.send(
+        CreateCatalogEntryCommand(
+            itemId = payload.itemId,
+            title = payload.title,
+            author = payload.author,
+            description = payload.description,
+            createdDate = LocalDateTime.now(),
+            isbn = payload.isbn),
+        // add meta data to command
+        MetaData.with(SESSION_ID_HEADER, sessionId))
+  }
 }

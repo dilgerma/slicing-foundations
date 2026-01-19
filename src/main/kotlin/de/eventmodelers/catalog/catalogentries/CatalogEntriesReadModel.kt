@@ -13,12 +13,11 @@ import org.springframework.format.annotation.DateTimeFormat
 class CatalogEntriesReadModelEntity {
   @Id @Column(name = "item_id") var itemId: String? = null
 
-    @Column(name = "title")
-    var title: String? = null
+  @Column(name = "title") var title: String? = null
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @Column(name = "createdDate")
-    var createdDate: LocalDateTime? = null
+  @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+  @Column(name = "createdDate")
+  var createdDate: LocalDateTime? = null
 }
 
 data class CatalogEntriesReadModel(val data: List<CatalogEntriesReadModelEntity>) : ReadModel
