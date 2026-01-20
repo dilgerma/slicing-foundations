@@ -2,8 +2,6 @@
 
 ## Overview
 
-find the slice using .slices/index.json
-
 A STATE_VIEW slice represents a read-only projection/view of data. It does NOT contain commands - only read models that are populated by events from other slices. This is the "Query" side of CQRS.
 
 ## Input Structure (from config.json)
@@ -648,14 +646,14 @@ CREATE TABLE IF NOT EXISTS public.<table_name> (
 CREATE INDEX IF NOT EXISTS idx_<table>_lawfirmid ON public.<table_name>("lawfirmid");
 ```
 
-### Step 8: Add API Endpoint
+### Step 8: Add API Endpoint (if apiEndpoint specified)
 
 If the readmodel has an `apiEndpoint` field, create a REST controller:
 
-**Location:** `src/main/kotlin/de/alex/<module>/<readmodelname>/<ReadModelName>Resource.kt`
+**Location:** `src/main/kotlin/de/alex/<module>/<readmodelname>/<ReadModelName>Controller.kt`
 
 ```kotlin
-package <basepackage>.<module>.<readmodelname>
+package de.alex.<module>.<readmodelname>
 
 import org.axonframework.queryhandling.QueryGateway
 import org.springframework.web.bind.annotation.*
@@ -678,7 +676,83 @@ class <ReadModelName>Controller(
 
 ## Specifications (Test Cases)
 
-Use your projection-test-builder.md Skill to implement the test cases for this slice.
+STATE_VIEW specifications use Given/Then format (no When since no commands):
+
+**Location:** `src/test/kotlin/de/alex/<module>/<ReadModelName>ProjectionTest.kt`
+
+```kotlin
+package de.alex.<module>
+
+import de.alex.BaseIntegrationTest
+import de.alex.ProjectionFixtureConfiguration
+import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
+
+class <ReadModelName>ProjectionTest : BaseIntegrationTest() {
+
+    @Autowired
+    lateinit var projectionFixture: ProjectionFixtureConfiguration
+
+    @Autowired
+    lateinit var repository: <ReadModelName>ReadModelRepository
+
+    @Test
+    fun `<spec title>`() {
+        // Given: Apply events from specification
+        projectionFixture.apply(<SourceEvent>(...))  // From spec.given
+
+        // Then: Verify read model state
+        awaitUntilAsserted {
+            val result = repository.findById(<id>).orElse(null)
+            assertThat(result).isNotNull
+            assertThat(result.<field>).isEqualTo(<expectedValue>)  // From spec.then
+        }
+    }
+}
+```
+
+## Example: Processing "slice: Law Firm Details for Auth"
+
+**Input:**
+```json
+{
+  "sliceType": "STATE_VIEW",
+  "title": "slice: Law Firm Details for Auth",
+  "readmodels": [{
+    "title": "Law Firm Details for Auth",
+    "fields": [
+      {"name": "aggregateId", "type": "UUID", "idAttribute": true},
+      {"name": "name", "type": "String"}
+    ],
+    "dependencies": [
+      {"type": "INBOUND", "title": "Law Firm Created", "elementType": "EVENT"},
+      {"type": "INBOUND", "title": "Law Firm Updated", "elementType": "EVENT"}
+    ]
+  }],
+  "screens": [...]
+}
+```
+
+**Generated Files:**
+1. `src/main/kotlin/de/alex/lawfirm/lawfirmdetailsforauth/LawFirmDetailsForAuthReadModel.kt` (Entity + DTO)
+2. `src/main/kotlin/de/alex/lawfirm/lawfirmdetailsforauth/internal/LawFirmDetailsForAuthReadModelRepository.kt`
+3. `src/main/kotlin/de/alex/lawfirm/lawfirmdetailsforauth/internal/LawFirmDetailsForAuthReadModelProjector.kt`
+4. `src/main/kotlin/de/alex/lawfirm/lawfirmdetailsforauth/LawFirmDetailsForAuthReadModelQuery.kt`
+5. `src/main/kotlin/de/alex/lawfirm/lawfirmdetailsforauth/internal/LawFirmDetailsForAuthReadModelQueryHandler.kt`
+6. `src/main/resources/db/migration/V<n>__create_law_firm_details_for_auth.sql`
+
+## Field Mapping Notes
+
+When a readmodel field has a `mapping` attribute:
+```json
+{
+  "name": "lawfirmId",
+  "type": "UUID",
+  "mapping": "aggregateId"
+}
+```
+
+This means the `lawfirmId` field in the readmodel should be populated from the `aggregateId` field in the source event.
 
 ## Screen Dependencies
 
