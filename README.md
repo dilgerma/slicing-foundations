@@ -6,6 +6,9 @@ Slices are defined as packages in the root package (as specified in the generato
 Find the exercises here:
 https://nebulit-exercises.vercel.app/
 
+Find the Swagger UI here:
+http://localhost:8080/swagger-ui/index.html
+
 ## Todos after the initial generation
 The code contains TODOs that mark the places which need to be adapted. The generator makes certain basic assumptions (for example, aggregate IDs are UUIDs).
 
