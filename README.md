@@ -12,6 +12,11 @@ http://localhost:8080/swagger-ui/index.html
 Find the UI here:
 https://eventsourcing-workshop-ui.vercel.app/
 
+Run Code Generation:
+```
+docker run -ti -p 3001:3000 -v $PWD:/workspace -e HOST_WORKSPACE=$PWD --name codegen --rm nebulit/codegen
+```
+
 ## Todos after the initial generation
 The code contains TODOs that mark the places which need to be adapted. The generator makes certain basic assumptions (for example, aggregate IDs are UUIDs).
 
