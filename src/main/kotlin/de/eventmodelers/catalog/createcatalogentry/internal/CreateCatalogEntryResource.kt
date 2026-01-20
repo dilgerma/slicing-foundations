@@ -55,7 +55,7 @@ class CreateCatalogEntryResource(private var commandGateway: CommandGateway) {
     ): CompletableFuture<Any> {
         return commandGateway.send(
 			CreateCatalogEntryCommand(
-				itemId = UUID.randomUUID().toString(),
+				itemId = payload.itemId,
 				title = payload.title,
 				author = payload.author,
 				description = payload.description,

@@ -16,7 +16,7 @@ class CatalogManagement {
     @AggregateIdentifier
      var aggregateId: String? = null
 
-    @CreationPolicy(AggregateCreationPolicy.CREATE_IF_MISSING)
+    @CreationPolicy(AggregateCreationPolicy.ALWAYS)
     @CommandHandler
     fun handle(command: CreateCatalogEntryCommand) {
 
