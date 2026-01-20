@@ -1,33 +1,29 @@
-## Event Sourcing Workshop
+Event Sourcing Workshop
 
-### Setup
+## Setup
+Slices are defined as packages in the root package (as specified in the generator).
 
-Slices sind im _root_ Package (wie im Generator angegeben) als Packages definiert.
+Find the exercises here:
+https://nebulit-exercises.vercel.app/
 
-### Todos nach der initialen Generierung
+## Todos after the initial generation
+The code contains TODOs that mark the places which need to be adapted. The generator makes certain basic assumptions (for example, aggregate IDs are UUIDs).
 
-Im Code sind TODOs definiert für die Stellen die angepasst werden müssen.
-Der Generator trifft bestimmte Grundannahmen (aggregateIds sind UUIDs beispielsweise).
+If these assumptions are changed, the code may not compile immediately and will need minor adjustments.
 
-Wird von diesen Annahmen abgewichen kompiliert der Code ggf. nicht sofort sondern muss leicht
-angepasst werden.
+Your code guidelines take precedence, so it is expected that the code does not compile right away (however, only small adjustments should be necessary).
 
-Ihre Code Richtlinien sind natürlich führend, daher ist es erwartungskonform dass Code
-nicht sofort kompiliert (es sollten aber wirklich nur kleine Anpassungen notwendig sein).
+## Starting the application
+To start the service, the ApplicationStarter class in src/test/kotlin can be used. Why is it located in test?
 
-### Start der Applikation
+This class starts the complete environment (including Postgres and, if necessary, Kafka via TestContainers).
 
-Zum Start des Services kann die Klasse _ApplicationStarter_ verwendet werden in _src/test/kotlin_.
-Warum in _test_?
+## Package structure
 
-Diese Klasse startet die komplette Umgebung (inkl. Postgres und ggf. Kafka über TestContainers)
+Events are located in the events package.
 
-### Package Struktur
+Aggregates are located in the domain package.
 
-Events sind im Package "events"
+Each slice has its own isolated package.
 
-Aggregates liegen im Package "domain"
-
-Slices haben jeweils ein isoliertes Package <sliceName>
-
-Package "common" enthält einige Interfaces für die generelle Struktur.
+The common package contains several interfaces for the general structure.
