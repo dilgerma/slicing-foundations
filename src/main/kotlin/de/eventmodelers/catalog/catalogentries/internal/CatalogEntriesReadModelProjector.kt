@@ -16,7 +16,6 @@ class CatalogEntriesReadModelProjector(private val repository: CatalogEntriesRea
 
     @EventHandler
     fun on(event: CatalogueEntryCreatedEvent) {
-        Thread.sleep(15000)
         val entity = repository.findById(event.itemId).orElse(CatalogEntriesReadModelEntity())
         entity
             .apply {
