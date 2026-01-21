@@ -1,15 +1,15 @@
 {
   "slices": [
     {
-      "id": "3458764655724615131",
-      "status": "Created",
+      "id": "3458764656044114951",
+      "status": "Done",
       "index": 1,
       "title": "slice: Create Catalog Entry",
       "context": "Catalog Management",
       "sliceType": "STATE_CHANGE",
       "commands": [
         {
-          "id": "3458764655717997017",
+          "id": "3458764656044115383",
           "tags": [],
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
@@ -44,6 +44,13 @@
               "subfields": [],
               "cardinality": "Single",
               "idAttribute": false
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
             }
           ],
           "type": "COMMAND",
@@ -54,13 +61,13 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655552383979",
+              "id": "3458764656044115475",
               "type": "OUTBOUND",
               "title": "Catalogue entry created",
               "elementType": "EVENT"
             },
             {
-              "id": "3458764655552670150",
+              "id": "3458764656044115359",
               "type": "INBOUND",
               "title": "screen",
               "elementType": "SCREEN"
@@ -76,7 +83,7 @@
       ],
       "events": [
         {
-          "id": "3458764655552383979",
+          "id": "3458764656044115475",
           "tags": [],
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
@@ -93,6 +100,13 @@
             },
             {
               "name": "description",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            },
+            {
+              "name": "isbn",
               "type": "String",
               "subfields": [],
               "cardinality": "Single",
@@ -121,25 +135,37 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655738119679",
+              "id": "3458764656044115509",
+              "type": "OUTBOUND",
+              "title": "Catalog Entry Details to fetch",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764656044115437",
               "type": "OUTBOUND",
               "title": "Item Details Lookup for publication",
               "elementType": "READMODEL"
             },
             {
-              "id": "3458764655723786459",
+              "id": "3458764656044115394",
               "type": "OUTBOUND",
               "title": "Catalog Entry Details",
               "elementType": "READMODEL"
             },
             {
-              "id": "3458764655718555043",
+              "id": "3458764656044115388",
               "type": "OUTBOUND",
               "title": "Catalog Entries",
               "elementType": "READMODEL"
             },
             {
-              "id": "3458764655717997017",
+              "id": "3458764656044115520",
+              "type": "OUTBOUND",
+              "title": "Catalog Entry Details Lookup",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764656044115383",
               "type": "INBOUND",
               "title": "Create Catalog Entry",
               "elementType": "COMMAND"
@@ -156,9 +182,9 @@
       "readmodels": [],
       "screens": [
         {
-          "id": "3458764655552670150",
+          "id": "3458764656044115359",
           "tags": [],
-          "groupId": "3458764655552670158",
+          "groupId": "3458764656044115631",
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
           "context": "INTERNAL",
@@ -192,6 +218,13 @@
               "subfields": [],
               "cardinality": "Single",
               "idAttribute": false
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
             }
           ],
           "type": "SCREEN",
@@ -202,7 +235,7 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655717997017",
+              "id": "3458764656044115383",
               "type": "OUTBOUND",
               "title": "Create Catalog Entry",
               "elementType": "COMMAND"
@@ -223,7 +256,7 @@
       "specifications": [
         {
           "vertical": false,
-          "id": "3458764655826436475",
+          "id": "3458764656044115506",
           "sliceName": "<p>slice: Create Catalog Entry</p>",
           "title": "spec: Create Catalog Entry",
           "given": [],
@@ -231,7 +264,7 @@
             {
               "title": "Create Catalog Entry",
               "tags": [],
-              "id": "3458764655826436476",
+              "id": "3458764656044115507",
               "index": 0,
               "specRow": -1,
               "type": "SPEC_COMMAND",
@@ -263,16 +296,23 @@
                   "subfields": [],
                   "cardinality": "Single",
                   "example": ""
+                },
+                {
+                  "name": "isbn",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
                 }
               ],
-              "linkedId": "3458764655717997017"
+              "linkedId": "3458764656044115383"
             }
           ],
           "then": [
             {
               "title": "Catalogue entry created",
               "tags": [],
-              "id": "3458764655826436478",
+              "id": "3458764656044115508",
               "index": 0,
               "specRow": -1,
               "type": "SPEC_EVENT",
@@ -286,6 +326,13 @@
                 },
                 {
                   "name": "description",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "isbn",
                   "type": "String",
                   "subfields": [],
                   "cardinality": "Single",
@@ -306,11 +353,11 @@
                   "example": ""
                 }
               ],
-              "linkedId": "3458764655552383979"
+              "linkedId": "3458764656044115475"
             }
           ],
           "comments": [],
-          "linkedId": "3458764655724615131"
+          "linkedId": "3458764656044114951"
         }
       ],
       "actors": [],
@@ -319,8 +366,8 @@
       ]
     },
     {
-      "id": "3458764655724615140",
-      "status": "Created",
+      "id": "3458764656044114979",
+      "status": "InProgress",
       "index": 3,
       "title": "slice: Catalog Entries",
       "context": "Catalog Management",
@@ -329,7 +376,7 @@
       "events": [],
       "readmodels": [
         {
-          "id": "3458764655718555043",
+          "id": "3458764656044115388",
           "tags": [],
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
@@ -360,13 +407,13 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655552976167",
+              "id": "3458764656044115361",
               "type": "OUTBOUND",
               "title": "screen",
               "elementType": "SCREEN"
             },
             {
-              "id": "3458764655552383979",
+              "id": "3458764656044115475",
               "type": "INBOUND",
               "title": "Catalogue entry created",
               "elementType": "EVENT"
@@ -383,9 +430,9 @@
       ],
       "screens": [
         {
-          "id": "3458764655552976167",
+          "id": "3458764656044115361",
           "tags": [],
-          "groupId": "3458764655552976171",
+          "groupId": "3458764656044115632",
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
           "context": "INTERNAL",
@@ -415,7 +462,7 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655718555043",
+              "id": "3458764656044115388",
               "type": "INBOUND",
               "title": "Catalog Entries",
               "elementType": "READMODEL"
@@ -436,15 +483,15 @@
       "specifications": [
         {
           "vertical": false,
-          "id": "3458764655725315459",
-          "sliceName": "<p>slice: Catalog Entries</p>",
+          "id": "3458764656044115395",
+          "sliceName": "slice: Catalog Entries",
           "title": "spec: Catalog Entries - scenario",
           "given": [
             {
               "title": "Catalogue entry created",
               "tags": [],
               "examples": [],
-              "id": "3458764655725315466",
+              "id": "3458764656044115398",
               "index": 1,
               "specRow": -1,
               "type": "SPEC_EVENT",
@@ -458,6 +505,13 @@
                 },
                 {
                   "name": "description",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "isbn",
                   "type": "String",
                   "subfields": [],
                   "cardinality": "Single",
@@ -478,13 +532,13 @@
                   "example": "Lord of the Rings"
                 }
               ],
-              "linkedId": "3458764655552383979"
+              "linkedId": "3458764656044115475"
             },
             {
               "title": "Catalogue entry created",
               "tags": [],
               "examples": [],
-              "id": "3458764655725315463",
+              "id": "3458764656044115397",
               "index": 0,
               "specRow": -1,
               "type": "SPEC_EVENT",
@@ -498,6 +552,13 @@
                 },
                 {
                   "name": "description",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "isbn",
                   "type": "String",
                   "subfields": [],
                   "cardinality": "Single",
@@ -518,7 +579,7 @@
                   "example": "Harry Potter"
                 }
               ],
-              "linkedId": "3458764655552383979"
+              "linkedId": "3458764656044115475"
             }
           ],
           "when": [],
@@ -536,7 +597,7 @@
                   "itemId": 2
                 }
               ],
-              "id": "3458764655725315461",
+              "id": "3458764656044115396",
               "index": 0,
               "specRow": -1,
               "type": "SPEC_READMODEL",
@@ -556,11 +617,11 @@
                   "example": ""
                 }
               ],
-              "linkedId": "3458764655718555043"
+              "linkedId": "3458764656044115388"
             }
           ],
           "comments": [],
-          "linkedId": "3458764655724615140"
+          "linkedId": "3458764656044114979"
         }
       ],
       "actors": [],
@@ -569,9 +630,697 @@
       ]
     },
     {
-      "id": "3458764655724615144",
+      "id": "3458764656044114953",
       "status": "Created",
       "index": 5,
+      "title": "slice: Item Details to fetch",
+      "context": "Catalog Management",
+      "sliceType": "STATE_VIEW",
+      "commands": [],
+      "events": [],
+      "readmodels": [
+        {
+          "id": "3458764656044115509",
+          "tags": [],
+          "elementContext": "INTERNAL",
+          "modelContext": "Catalog Management",
+          "context": "INTERNAL",
+          "slice": "slice: Item Details to fetch",
+          "title": "Catalog Entry Details to fetch",
+          "fields": [
+            {
+              "name": "fetched",
+              "type": "Boolean",
+              "mapping": "Catalog Entry Information added",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            },
+            {
+              "name": "itemId",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": true
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            }
+          ],
+          "type": "READMODEL",
+          "description": "",
+          "aggregate": "Catalogue Management",
+          "aggregateDependencies": [
+            "Catalogue Management"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764656044115510",
+              "type": "OUTBOUND",
+              "title": "Items Fetcher",
+              "elementType": "AUTOMATION"
+            },
+            {
+              "id": "3458764656044115475",
+              "type": "INBOUND",
+              "title": "Catalogue entry created",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764656044115497",
+              "type": "INBOUND",
+              "title": "Catalog Entry Information added",
+              "elementType": "EVENT"
+            }
+          ],
+          "listElement": true,
+          "createsAggregate": false,
+          "triggers": [],
+          "sketched": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "screens": [],
+      "screenImages": [],
+      "screenLayouts": [],
+      "processors": [],
+      "tables": [],
+      "specifications": [
+        {
+          "vertical": false,
+          "id": "3458764656044115516",
+          "sliceName": "<p>slice: Item Details to fetch</p>",
+          "title": "spec: Item Details to fetch is empty when fetched",
+          "given": [
+            {
+              "title": "Item Information added",
+              "tags": [],
+              "examples": [],
+              "id": "3458764656044115519",
+              "index": 1,
+              "specRow": -1,
+              "type": "SPEC_EVENT",
+              "fields": [
+                {
+                  "name": "itemId",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "title",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "author",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "description",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "isbn",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                }
+              ],
+              "linkedId": "3458764656044115497"
+            },
+            {
+              "title": "Catalogue entry created",
+              "tags": [],
+              "id": "3458764656044115518",
+              "index": 0,
+              "specRow": -1,
+              "type": "SPEC_EVENT",
+              "fields": [
+                {
+                  "name": "author",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "description",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "isbn",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "itemId",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "title",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                }
+              ],
+              "linkedId": "3458764656044115475"
+            }
+          ],
+          "when": [],
+          "then": [
+            {
+              "title": "Item Details to fetch",
+              "tags": [],
+              "examples": [],
+              "id": "3458764656044115517",
+              "index": 0,
+              "specRow": -1,
+              "type": "SPEC_READMODEL",
+              "fields": [
+                {
+                  "name": "fetched",
+                  "type": "Boolean",
+                  "mapping": "Catalog Entry Information added",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "itemId",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "isbn",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                }
+              ],
+              "linkedId": "3458764656044115509"
+            }
+          ],
+          "comments": [],
+          "linkedId": "3458764656044114953"
+        },
+        {
+          "vertical": false,
+          "id": "3458764656044115513",
+          "sliceName": "<p>slice: Item Details to fetch</p>",
+          "title": "spec: Item Details to fetch - scenario",
+          "given": [
+            {
+              "title": "Catalogue entry created",
+              "tags": [],
+              "examples": [],
+              "id": "3458764656044115515",
+              "index": 0,
+              "specRow": -1,
+              "type": "SPEC_EVENT",
+              "fields": [
+                {
+                  "name": "author",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "description",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "isbn",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                },
+                {
+                  "name": "itemId",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": "1"
+                },
+                {
+                  "name": "title",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                }
+              ],
+              "linkedId": "3458764656044115475"
+            }
+          ],
+          "when": [],
+          "then": [
+            {
+              "title": "Item Details to fetch",
+              "tags": [],
+              "examples": [],
+              "id": "3458764656044115514",
+              "index": 0,
+              "specRow": -1,
+              "type": "SPEC_READMODEL",
+              "fields": [
+                {
+                  "name": "fetched",
+                  "type": "Boolean",
+                  "mapping": "Catalog Entry Information added",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": "false"
+                },
+                {
+                  "name": "itemId",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": "1"
+                },
+                {
+                  "name": "isbn",
+                  "type": "String",
+                  "subfields": [],
+                  "cardinality": "Single",
+                  "example": ""
+                }
+              ],
+              "linkedId": "3458764656044115509"
+            }
+          ],
+          "comments": [],
+          "linkedId": "3458764656044114953"
+        }
+      ],
+      "actors": [],
+      "aggregates": [
+        "Catalogue Management"
+      ]
+    },
+    {
+      "id": "3458764656044114950",
+      "status": "Informational",
+      "index": 7,
+      "title": "slice: Catalog Item Details",
+      "context": "Catalog Management",
+      "sliceType": "STATE_VIEW",
+      "commands": [],
+      "events": [
+        {
+          "id": "3458764656044115522",
+          "tags": [],
+          "elementContext": "INTERNAL",
+          "modelContext": "Catalog Management",
+          "context": "INTERNAL",
+          "slice": "slice: Catalog Item Details",
+          "title": "Item Details requested",
+          "fields": [],
+          "type": "EVENT",
+          "description": "",
+          "aggregate": "Catalogue Management",
+          "aggregateDependencies": [
+            "Catalogue Management"
+          ],
+          "dependencies": [],
+          "createsAggregate": false,
+          "triggers": [],
+          "sketched": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "readmodels": [
+        {
+          "id": "3458764656044115520",
+          "tags": [],
+          "elementContext": "INTERNAL",
+          "modelContext": "Catalog Management",
+          "context": "INTERNAL",
+          "slice": "slice: Catalog Item Details",
+          "title": "Catalog Entry Details Lookup",
+          "fields": [
+            {
+              "name": "itemId",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": true
+            },
+            {
+              "name": "title",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            },
+            {
+              "name": "author",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            },
+            {
+              "name": "description",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            }
+          ],
+          "type": "READMODEL",
+          "description": "",
+          "aggregate": "Catalogue Management",
+          "aggregateDependencies": [
+            "Catalogue Management"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764656044115510",
+              "type": "OUTBOUND",
+              "title": "Items Fetcher",
+              "elementType": "AUTOMATION"
+            },
+            {
+              "id": "3458764656044115475",
+              "type": "INBOUND",
+              "title": "Catalogue entry created",
+              "elementType": "EVENT"
+            }
+          ],
+          "createsAggregate": false,
+          "triggers": [],
+          "sketched": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "screens": [],
+      "screenImages": [],
+      "screenLayouts": [],
+      "processors": [],
+      "tables": [],
+      "specifications": [],
+      "actors": [],
+      "aggregates": [
+        "Catalogue Management"
+      ]
+    },
+    {
+      "id": "3458764656044114952",
+      "status": "Created",
+      "index": 9,
+      "title": "slice: Add Missing Data",
+      "context": "Catalog Management",
+      "sliceType": "STATE_CHANGE",
+      "commands": [
+        {
+          "id": "3458764656044115512",
+          "tags": [],
+          "elementContext": "INTERNAL",
+          "modelContext": "Catalog Management",
+          "context": "INTERNAL",
+          "slice": "slice: Add Missing Data",
+          "title": "Add Data from Book System",
+          "fields": [
+            {
+              "name": "itemId",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": true
+            },
+            {
+              "name": "title",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            },
+            {
+              "name": "author",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            },
+            {
+              "name": "description",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            }
+          ],
+          "type": "COMMAND",
+          "description": "",
+          "aggregate": "Catalogue Management",
+          "aggregateDependencies": [
+            "Catalogue Management"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764656044115497",
+              "type": "OUTBOUND",
+              "title": "Catalog Entry Information added",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764656044115510",
+              "type": "INBOUND",
+              "title": "Items Fetcher",
+              "elementType": "AUTOMATION"
+            }
+          ],
+          "createsAggregate": false,
+          "triggers": [],
+          "sketched": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "3458764656044115497",
+          "tags": [],
+          "elementContext": "INTERNAL",
+          "modelContext": "Catalog Management",
+          "context": "INTERNAL",
+          "slice": "slice: Add Missing Data",
+          "title": "Catalog Entry Information added",
+          "fields": [
+            {
+              "name": "itemId",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": true
+            },
+            {
+              "name": "title",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            },
+            {
+              "name": "author",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            },
+            {
+              "name": "description",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            }
+          ],
+          "type": "EVENT",
+          "description": "",
+          "aggregate": "Catalogue Management",
+          "aggregateDependencies": [
+            "Catalogue Management"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764656044115509",
+              "type": "OUTBOUND",
+              "title": "Catalog Entry Details to fetch",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764656044115512",
+              "type": "INBOUND",
+              "title": "Add Data from Book System",
+              "elementType": "COMMAND"
+            }
+          ],
+          "createsAggregate": false,
+          "triggers": [],
+          "sketched": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "readmodels": [],
+      "screens": [],
+      "screenImages": [],
+      "screenLayouts": [],
+      "processors": [
+        {
+          "id": "3458764656044115510",
+          "tags": [],
+          "groupId": "3458764656044115648",
+          "elementContext": "INTERNAL",
+          "modelContext": "Catalog Management",
+          "context": "INTERNAL",
+          "slice": "slice: Add Missing Data",
+          "title": "Items Fetcher",
+          "fields": [
+            {
+              "name": "itemId",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": true
+            },
+            {
+              "name": "title",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            },
+            {
+              "name": "author",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            },
+            {
+              "name": "description",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
+            }
+          ],
+          "type": "AUTOMATION",
+          "description": "",
+          "aggregate": "Catalogue Management",
+          "aggregateDependencies": [
+            "Catalogue Management"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764656044115512",
+              "type": "OUTBOUND",
+              "title": "Add Data from Book System",
+              "elementType": "COMMAND"
+            },
+            {
+              "id": "3458764656044115520",
+              "type": "INBOUND",
+              "title": "Catalog Entry Details Lookup",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764656044115509",
+              "type": "INBOUND",
+              "title": "Catalog Entry Details to fetch",
+              "elementType": "READMODEL"
+            }
+          ],
+          "createsAggregate": false,
+          "triggers": [],
+          "sketched": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "tables": [],
+      "specifications": [],
+      "actors": [],
+      "aggregates": [
+        "Catalogue Management"
+      ]
+    },
+    {
+      "id": "3458764656044114978",
+      "status": "Created",
+      "index": 11,
       "title": "slice: Catalog Entry Details",
       "context": "Catalog Management",
       "sliceType": "STATE_VIEW",
@@ -579,7 +1328,7 @@
       "events": [],
       "readmodels": [
         {
-          "id": "3458764655723786459",
+          "id": "3458764656044115394",
           "tags": [],
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
@@ -614,6 +1363,13 @@
               "subfields": [],
               "cardinality": "Single",
               "idAttribute": false
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
             }
           ],
           "type": "READMODEL",
@@ -624,19 +1380,19 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655723527937",
+              "id": "3458764656044115392",
               "type": "OUTBOUND",
               "title": "screen",
               "elementType": "SCREEN"
             },
             {
-              "id": "3458764655552383979",
+              "id": "3458764656044115475",
               "type": "INBOUND",
               "title": "Catalogue entry created",
               "elementType": "EVENT"
             },
             {
-              "id": "3458764655552383980",
+              "id": "3458764656044115476",
               "type": "INBOUND",
               "title": "Catalogue entry updated",
               "elementType": "EVENT"
@@ -652,9 +1408,9 @@
       ],
       "screens": [
         {
-          "id": "3458764655723527937",
+          "id": "3458764656044115392",
           "tags": [],
-          "groupId": "3458764655723527939",
+          "groupId": "3458764656044115636",
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
           "context": "INTERNAL",
@@ -688,6 +1444,13 @@
               "subfields": [],
               "cardinality": "Single",
               "idAttribute": false
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
             }
           ],
           "type": "SCREEN",
@@ -698,13 +1461,13 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655717997160",
+              "id": "3458764656044115384",
               "type": "OUTBOUND",
               "title": "Update Catalog Entry",
               "elementType": "COMMAND"
             },
             {
-              "id": "3458764655723786459",
+              "id": "3458764656044115394",
               "type": "INBOUND",
               "title": "Catalog Entry Details",
               "elementType": "READMODEL"
@@ -729,15 +1492,15 @@
       ]
     },
     {
-      "id": "3458764655724615166",
+      "id": "3458764656044114977",
       "status": "Created",
-      "index": 7,
+      "index": 13,
       "title": "slice: Update Catalog Entry",
       "context": "Catalog Management",
       "sliceType": "STATE_CHANGE",
       "commands": [
         {
-          "id": "3458764655717997160",
+          "id": "3458764656044115384",
           "tags": [],
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
@@ -772,6 +1535,13 @@
               "subfields": [],
               "cardinality": "Single",
               "idAttribute": false
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
             }
           ],
           "type": "COMMAND",
@@ -782,13 +1552,13 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655552383980",
+              "id": "3458764656044115476",
               "type": "OUTBOUND",
               "title": "Catalogue entry updated",
               "elementType": "EVENT"
             },
             {
-              "id": "3458764655723527937",
+              "id": "3458764656044115392",
               "type": "INBOUND",
               "title": "screen",
               "elementType": "SCREEN"
@@ -804,7 +1574,7 @@
       ],
       "events": [
         {
-          "id": "3458764655552383980",
+          "id": "3458764656044115476",
           "tags": [],
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
@@ -839,6 +1609,13 @@
               "subfields": [],
               "cardinality": "Single",
               "idAttribute": false
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
             }
           ],
           "type": "EVENT",
@@ -849,19 +1626,19 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655738119679",
+              "id": "3458764656044115437",
               "type": "OUTBOUND",
               "title": "Item Details Lookup for publication",
               "elementType": "READMODEL"
             },
             {
-              "id": "3458764655723786459",
+              "id": "3458764656044115394",
               "type": "OUTBOUND",
               "title": "Catalog Entry Details",
               "elementType": "READMODEL"
             },
             {
-              "id": "3458764655717997160",
+              "id": "3458764656044115384",
               "type": "INBOUND",
               "title": "Update Catalog Entry",
               "elementType": "COMMAND"
@@ -878,9 +1655,9 @@
       "readmodels": [],
       "screens": [
         {
-          "id": "3458764655723527937",
+          "id": "3458764656044115392",
           "tags": [],
-          "groupId": "3458764655723527939",
+          "groupId": "3458764656044115636",
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
           "context": "INTERNAL",
@@ -914,6 +1691,13 @@
               "subfields": [],
               "cardinality": "Single",
               "idAttribute": false
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
             }
           ],
           "type": "SCREEN",
@@ -924,13 +1708,13 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655717997160",
+              "id": "3458764656044115384",
               "type": "OUTBOUND",
               "title": "Update Catalog Entry",
               "elementType": "COMMAND"
             },
             {
-              "id": "3458764655723786459",
+              "id": "3458764656044115394",
               "type": "INBOUND",
               "title": "Catalog Entry Details",
               "elementType": "READMODEL"
@@ -955,15 +1739,15 @@
       ]
     },
     {
-      "id": "3458764655724615192",
+      "id": "3458764656044114976",
       "status": "Created",
-      "index": 9,
+      "index": 15,
       "title": "slice: Archive Catalog Entry",
       "context": "Catalog Management",
       "sliceType": "STATE_CHANGE",
       "commands": [
         {
-          "id": "3458764655717997216",
+          "id": "3458764656044115385",
           "tags": [],
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
@@ -987,13 +1771,13 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655552383981",
+              "id": "3458764656044115477",
               "type": "OUTBOUND",
               "title": "Catalogue entry archived",
               "elementType": "EVENT"
             },
             {
-              "id": "3458764655718555913",
+              "id": "3458764656044115390",
               "type": "INBOUND",
               "title": "screen",
               "elementType": "SCREEN"
@@ -1009,7 +1793,7 @@
       ],
       "events": [
         {
-          "id": "3458764655552383981",
+          "id": "3458764656044115477",
           "tags": [],
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
@@ -1033,13 +1817,13 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655736566009",
+              "id": "3458764656044115436",
               "type": "OUTBOUND",
               "title": "Items to publish",
               "elementType": "READMODEL"
             },
             {
-              "id": "3458764655717997216",
+              "id": "3458764656044115385",
               "type": "INBOUND",
               "title": "Archive Catalog Entry",
               "elementType": "COMMAND"
@@ -1056,9 +1840,9 @@
       "readmodels": [],
       "screens": [
         {
-          "id": "3458764655718555913",
+          "id": "3458764656044115390",
           "tags": [],
-          "groupId": "3458764655718555915",
+          "groupId": "3458764656044115635",
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
           "context": "INTERNAL",
@@ -1102,13 +1886,13 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655717997216",
+              "id": "3458764656044115385",
               "type": "OUTBOUND",
               "title": "Archive Catalog Entry",
               "elementType": "COMMAND"
             },
             {
-              "id": "3458764655723786459",
+              "id": "3458764656044115394",
               "type": "INBOUND",
               "title": "Catalog Entry Details",
               "elementType": "READMODEL"
@@ -1133,15 +1917,15 @@
       ]
     },
     {
-      "id": "3458764655732738695",
+      "id": "3458764656044114975",
       "status": "Created",
-      "index": 11,
+      "index": 17,
       "title": "slice: Publish Item",
       "context": "Catalog Management",
       "sliceType": "STATE_CHANGE",
       "commands": [
         {
-          "id": "3458764655732594496",
+          "id": "3458764656044115435",
           "tags": [],
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
@@ -1165,13 +1949,13 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655732594722",
+              "id": "3458764656044115478",
               "type": "OUTBOUND",
               "title": "Item published",
               "elementType": "EVENT"
             },
             {
-              "id": "3458764655732168671",
+              "id": "3458764656044115433",
               "type": "INBOUND",
               "title": "screen",
               "elementType": "SCREEN"
@@ -1187,7 +1971,7 @@
       ],
       "events": [
         {
-          "id": "3458764655732594722",
+          "id": "3458764656044115478",
           "tags": [],
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
@@ -1211,19 +1995,19 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655738119679",
+              "id": "3458764656044115437",
               "type": "OUTBOUND",
               "title": "Item Details Lookup for publication",
               "elementType": "READMODEL"
             },
             {
-              "id": "3458764655736566009",
+              "id": "3458764656044115436",
               "type": "OUTBOUND",
               "title": "Items to publish",
               "elementType": "READMODEL"
             },
             {
-              "id": "3458764655732594496",
+              "id": "3458764656044115435",
               "type": "INBOUND",
               "title": "Publish Item",
               "elementType": "COMMAND"
@@ -1240,9 +2024,9 @@
       "readmodels": [],
       "screens": [
         {
-          "id": "3458764655732168671",
+          "id": "3458764656044115433",
           "tags": [],
-          "groupId": "3458764655732168677",
+          "groupId": "3458764656044115645",
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
           "context": "INTERNAL",
@@ -1265,7 +2049,7 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655732594496",
+              "id": "3458764656044115435",
               "type": "OUTBOUND",
               "title": "Publish Item",
               "elementType": "COMMAND"
@@ -1290,9 +2074,9 @@
       ]
     },
     {
-      "id": "3458764655738563268",
+      "id": "3458764656044114974",
       "status": "Created",
-      "index": 13,
+      "index": 19,
       "title": "slice: Item Details for publication",
       "context": "Catalog Management",
       "sliceType": "STATE_VIEW",
@@ -1300,7 +2084,7 @@
       "events": [],
       "readmodels": [
         {
-          "id": "3458764655738119679",
+          "id": "3458764656044115437",
           "tags": [],
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
@@ -1335,6 +2119,13 @@
               "subfields": [],
               "cardinality": "Single",
               "idAttribute": false
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
             }
           ],
           "type": "READMODEL",
@@ -1345,25 +2136,25 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655738191620",
+              "id": "3458764656044115438",
               "type": "OUTBOUND",
               "title": "Item Publishing",
               "elementType": "AUTOMATION"
             },
             {
-              "id": "3458764655552383979",
+              "id": "3458764656044115475",
               "type": "INBOUND",
               "title": "Catalogue entry created",
               "elementType": "EVENT"
             },
             {
-              "id": "3458764655732594722",
+              "id": "3458764656044115478",
               "type": "INBOUND",
               "title": "Item published",
               "elementType": "EVENT"
             },
             {
-              "id": "3458764655552383980",
+              "id": "3458764656044115476",
               "type": "INBOUND",
               "title": "Catalogue entry updated",
               "elementType": "EVENT"
@@ -1389,9 +2180,9 @@
       ]
     },
     {
-      "id": "3458764655738563312",
+      "id": "3458764656044114973",
       "status": "Created",
-      "index": 15,
+      "index": 21,
       "title": "slice: Items to publish",
       "context": "Catalog Management",
       "sliceType": "STATE_VIEW",
@@ -1399,7 +2190,7 @@
       "events": [],
       "readmodels": [
         {
-          "id": "3458764655736566009",
+          "id": "3458764656044115436",
           "tags": [],
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
@@ -1431,25 +2222,25 @@
           ],
           "dependencies": [
             {
-              "id": "3458764655738191620",
+              "id": "3458764656044115438",
               "type": "OUTBOUND",
               "title": "Item Publishing",
               "elementType": "AUTOMATION"
             },
             {
-              "id": "3458764655738738246",
+              "id": "3458764656044115441",
               "type": "OUTBOUND",
               "title": "Item Publishing",
               "elementType": "AUTOMATION"
             },
             {
-              "id": "3458764655552383981",
+              "id": "3458764656044115477",
               "type": "INBOUND",
               "title": "Catalogue entry archived",
               "elementType": "EVENT"
             },
             {
-              "id": "3458764655732594722",
+              "id": "3458764656044115478",
               "type": "INBOUND",
               "title": "Item published",
               "elementType": "EVENT"
@@ -1475,15 +2266,15 @@
       ]
     },
     {
-      "id": "3458764655738563358",
+      "id": "3458764656044114972",
       "status": "Created",
-      "index": 17,
+      "index": 23,
       "title": "slice: Export Item",
       "context": "Catalog Management",
       "sliceType": "STATE_CHANGE",
       "commands": [
         {
-          "id": "3458764655738191723",
+          "id": "3458764656044115440",
           "tags": [],
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
@@ -1518,6 +2309,13 @@
               "subfields": [],
               "cardinality": "Single",
               "idAttribute": false
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
             }
           ],
           "type": "COMMAND",
@@ -1526,7 +2324,7 @@
           "aggregateDependencies": [],
           "dependencies": [
             {
-              "id": "3458764655738191620",
+              "id": "3458764656044115438",
               "type": "INBOUND",
               "title": "Item Publishing",
               "elementType": "AUTOMATION"
@@ -1547,9 +2345,9 @@
       "screenLayouts": [],
       "processors": [
         {
-          "id": "3458764655738191620",
+          "id": "3458764656044115438",
           "tags": [],
-          "groupId": "3458764655738191624",
+          "groupId": "3458764656044115646",
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
           "context": "INTERNAL",
@@ -1583,6 +2381,13 @@
               "subfields": [],
               "cardinality": "Single",
               "idAttribute": false
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "subfields": [],
+              "cardinality": "Single",
+              "idAttribute": false
             }
           ],
           "type": "AUTOMATION",
@@ -1591,19 +2396,19 @@
           "aggregateDependencies": [],
           "dependencies": [
             {
-              "id": "3458764655738191723",
+              "id": "3458764656044115440",
               "type": "OUTBOUND",
               "title": "Publish Item Exported",
               "elementType": "COMMAND"
             },
             {
-              "id": "3458764655738119679",
+              "id": "3458764656044115437",
               "type": "INBOUND",
               "title": "Item Details Lookup for publication",
               "elementType": "READMODEL"
             },
             {
-              "id": "3458764655736566009",
+              "id": "3458764656044115436",
               "type": "INBOUND",
               "title": "Items to publish",
               "elementType": "READMODEL"
@@ -1623,15 +2428,15 @@
       "aggregates": []
     },
     {
-      "id": "3458764655738738195",
+      "id": "3458764656044114954",
       "status": "Created",
-      "index": 19,
+      "index": 25,
       "title": "slice: Export Item Archived",
       "context": "Catalog Management",
       "sliceType": "STATE_CHANGE",
       "commands": [
         {
-          "id": "3458764655738738248",
+          "id": "3458764656044115443",
           "tags": [],
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
@@ -1653,7 +2458,7 @@
           "aggregateDependencies": [],
           "dependencies": [
             {
-              "id": "3458764655738738246",
+              "id": "3458764656044115441",
               "type": "INBOUND",
               "title": "Item Publishing",
               "elementType": "AUTOMATION"
@@ -1674,9 +2479,9 @@
       "screenLayouts": [],
       "processors": [
         {
-          "id": "3458764655738738246",
+          "id": "3458764656044115441",
           "tags": [],
-          "groupId": "3458764655738738253",
+          "groupId": "3458764656044115647",
           "elementContext": "INTERNAL",
           "modelContext": "Catalog Management",
           "context": "INTERNAL",
@@ -1705,13 +2510,13 @@
           "aggregateDependencies": [],
           "dependencies": [
             {
-              "id": "3458764655738738248",
+              "id": "3458764656044115443",
               "type": "OUTBOUND",
               "title": "Publish Item Archived",
               "elementType": "COMMAND"
             },
             {
-              "id": "3458764655736566009",
+              "id": "3458764656044115436",
               "type": "INBOUND",
               "title": "Items to publish",
               "elementType": "READMODEL"
@@ -1734,7 +2539,7 @@
   "flows": [],
   "aggregates": [
     {
-      "id": "3458764655744902825",
+      "id": "3458764656044115491",
       "title": "Catalogue Management",
       "fields": [
         {
@@ -1755,7 +2560,7 @@
     "rootPackage": "de.eventmodelers",
     "contextPackage": "catalog"
   },
-  "boardId": "uXjVJo5Vvho=",
+  "boardId": "uXjVLmFhiDA=",
   "sliceGroups": [],
   "sliceImages": [],
   "sliceLayouts": []
